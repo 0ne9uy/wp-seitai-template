@@ -1,0 +1,24 @@
+/**
+ * File: 404.css
+ * Usage: 404 Not Foundページのスタイルを定義します。
+*/
+
+.not-found {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  overflow: hidden;
+  margin-top: -32px;
+}
+
+.not-found span {
+  font-size: larger;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}

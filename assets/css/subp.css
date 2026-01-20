@@ -1,0 +1,29 @@
+/**
+ * File: subp.css
+ * Usage: トップページ以外の共通スタイルを定義します。
+ * Example: サブページ共通のヘッダーなど
+*/
+
+.ly_subp {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.bl_breadcrumb {
+  color: #fff;
+  font-size: small;
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .ly_subp {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .ly_subp {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}

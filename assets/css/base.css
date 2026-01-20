@@ -1,0 +1,614 @@
+/**
+ * File: base.css
+ * Usage: 全ページ共通のスタイルを定義します。レイアウト、モジュールなど。
+ * Example: ly_header, ly_footer, el_btn, el_gradientGold, el_subpTtl, el_normalTtl
+*/
+
+@charset "UTF-8";
+
+/* ================================================  
+ リセットの記述
+================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* WordPress管理画面のツールバー */
+#wpadminbar {
+  display: none !important;
+}
+
+/* ================================================  
+ フォントの読み込み
+================================================ */
+@font-face {
+  font-family: 'NotoSansJp';
+  font-weight: 400;
+  src: url(../fonts/NotoSansJP-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoSansJp';
+  font-weight: 500;
+  src: url(../fonts/NotoSansJP-Medium.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoSansJp';
+  font-weight: 600;
+  src: url(../fonts/NotoSansJP-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'NotoSansJp';
+  font-weight: 700;
+  src: url(../fonts/NotoSansJP-ExtraBold.woff) format('woff');
+}
+
+/* ================================================  
+ スタイルの適用(モバイルファーストで記述)
+================================================ */
+body {
+  background-color: #fff;
+  color: #333;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'NotoSansJp', sans-serif;
+  overscroll-behavior: none;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+}
+
+h4 {
+  font-size: 1.12em;
+}
+
+h5 {
+  font-size: 0.83em;
+}
+
+h6 {
+  font-size: 0.75em;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+li {
+  list-style: none;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+/* メディアクエリ用の表示・非表示 */
+.sm_only {
+  display: block !important;
+}
+.md_only,
+.lg_only {
+  display: none !important;
+}
+
+/* ================================================  
+  レイアウト
+================================================ */
+/* 全体のレイアウト */
+.ly_cont {
+  padding-inline: var(--pad-inner);
+}
+
+/* ヘッダー */
+.ly_header {
+  position: sticky;
+  width: 100%;
+  height: 64px;
+  top: 0;
+  display: flex;
+  background: #0e0f14;
+  z-index: 1000;
+  padding-inline: 20px;
+}
+
+/* フッター */
+.ly_footer {
+  background: #0e0f14;
+  color: white;
+  text-align: center;
+  padding-block: 10px;
+}
+
+/* ================================================  
+ ブロックモジュール
+================================================ */
+/* ヘッダー */
+.bl_headerCont {
+  color: white;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bl_header_logo {
+  text-align: center;
+  font-size: x-large;
+  line-height: 1.2;
+  padding: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.bl_header_nav {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
+.bl_header_nav_ul {
+  display: flex;
+  align-items: center;
+}
+
+.bl_header_nav_ul .bl_header_nav_ul_li a {
+  padding-inline: 12px;
+  display: flex;
+  border-right: #fff 1px solid;
+  line-height: 1;
+}
+
+.bl_header_nav_ul .bl_header_nav_actionBtn a {
+  padding-inline: 12px;
+  display: flex;
+  line-height: 1;
+}
+
+/* 投稿 */
+.bl_post {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* コンテンツグリッド（アーカイブページ共通） */
+.bl_content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* カード共通スタイル */
+.bl_column {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bl_column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.bl_column a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bl_column img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.bl_column p {
+  padding: 12px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.bl_column_content {
+  padding: 16px;
+}
+
+.bl_column_title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.bl_column_excerpt {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+/* ================================================
+  エレメントモジュール
+================================================ */
+/* ボタン */
+.el_btn {
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: #23262d;
+  color: white;
+  border: #333 2px solid;
+  width: 300px;
+  height: 56px;
+  margin-top: 20px;
+  margin-inline: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.el_btn_withIcon_img {
+  transition: all 0.3s ease;
+}
+
+.el_btn:hover,
+.el_btn:focus {
+  background: white;
+  color: #333;
+}
+
+.el_btn:hover .el_btn_withIcon_img,
+.el_btn:focus .el_btn_withIcon_img {
+  border-color: #333;
+  stroke: #333;
+}
+
+.el_btn_withIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ハンバーガーメニュー */
+.el_humb {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  translate: 0 -50%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.el_humb span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+/* ハンバーガーメニュー アクティブ状態 */
+.el_humb.is_active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.el_humb.is_active span:nth-child(2) {
+  opacity: 0;
+}
+
+.el_humb.is_active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* モバイルナビゲーション */
+@media screen and (max-width: 767px) {
+  .bl_header_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0e0f14;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .bl_header_nav.is_open {
+    transform: translateX(0);
+  }
+
+  .bl_header_nav_ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .bl_header_nav_ul .bl_header_nav_ul_li a {
+    border-right: none;
+    font-size: 1.25rem;
+    padding: 10px 20px;
+  }
+
+  body.is_menuOpen {
+    overflow: hidden;
+  }
+}
+
+/* ================================================  
+ ヘルパー
+================================================ */
+/* 余白の調整 */
+.hp_mt20 {
+  margin-top: 20px;
+}
+
+.hp_mt40 {
+  margin-top: 40px;
+}
+
+.hp_pb20 {
+  padding-bottom: 20px;
+}
+
+.hp_pt40 {
+  padding-top: 40px;
+}
+
+.hp_padX40 {
+  padding-inline: 40px;
+}
+
+.hp_padY20 {
+  padding-block: 20px;
+}
+
+.hp_wMax {
+  width: max-content;
+  margin-inline: auto;
+}
+
+/* 色の変更 */
+.hp_bgBlack {
+  background: #333;
+}
+
+/* テキストの調整 */
+.hp_txtCenter {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .sm_only {
+    display: none !important;
+  }
+  .md_only,
+  .lg_only {
+    display: block !important;
+  }
+
+  .ly_cont {
+    max-width: 1080px;
+    margin-inline: auto;
+  }
+
+  .ly_normalSec {
+    padding-block: 80px;
+  }
+
+  /* ヘッダー */
+  .ly_header {
+    z-index: 1000;
+  }
+
+  .bl_headerCont {
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .bl_header_nav {
+    display: flex;
+    height: 100%;
+    gap: 50px;
+  }
+
+  .bl_header_nav_ul {
+    height: 100%;
+    transform: translateX(6px);
+  }
+
+  .bl_header_nav_ul .bl_header_nav_actionBtn a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: #000;
+    height: 100%;
+    padding-inline: 32px;
+  }
+
+  .bl_header_nav_ul .bl_header_nav_ul_li:last-of-type a {
+    border-right: none;
+  }
+
+  .bl_header_nav_ul .bl_header_nav_actionBtn a img {
+    height: 30px;
+    object-fit: contain;
+  }
+
+  .bl_header_nav_ul .bl_header_nav_actionBtn.bl_header_nav_actionBtn_myPage,
+  .bl_header_nav_ul .bl_header_nav_actionBtn.bl_header_nav_actionBtn_contact {
+    position: relative;
+    height: 100%;
+  }
+
+  .bl_header_nav_ul .bl_header_nav_actionBtn a {
+    position: relative;
+    z-index: 1;
+  }
+
+  .el_btn {
+    width: 400px;
+    height: 64px;
+    margin-inline: auto;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+
+  .el_secTtl {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .hp_borderBold {
+    margin-top: 12px;
+  }
+
+  .hp_mt40 {
+    margin-top: 80px;
+  }
+
+  .hp_pt40 {
+    padding-top: 80px;
+  }
+
+  .bl_breadcrumb {
+    padding-block: 40px;
+  }
+
+  .el_subpTtl {
+    position: relative;
+    padding-block: 20px 10px;
+    border-bottom: #bb9402 2px solid;
+    font-size: 2rem;
+  }
+
+  .el_subpTtl span {
+    color: #fff;
+    opacity: 0.05;
+    position: absolute;
+    top: -24px;
+    left: -100px;
+    z-index: 1;
+    background: transparent;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: white;
+    font-size: 72px;
+    translate: -20px -20px;
+  }
+
+  .el_normalTtl {
+    font-size: 1.5rem;
+  }
+
+  /* コンテンツグリッド（レスポンシブ） */
+  .bl_content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .bl_column p {
+    padding: 16px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .bl_content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

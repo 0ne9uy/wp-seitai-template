@@ -1,0 +1,17 @@
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+Untitled
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies (if any)
+node_modules/
+
+# Everything Claude Code (local config)
+everything-claude-code/
