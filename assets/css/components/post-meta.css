@@ -1,0 +1,93 @@
+/**
+ * Component: post-meta.css
+ * Usage: 投稿・記事のメタ情報（日付 + カテゴリー）表示
+ *
+ * 使用例:
+ * <div class="el_postMeta">
+ *   <time class="el_postMeta_date">2024.01.15</time>
+ *   <span class="el_postMeta_cat">カテゴリー</span>
+ * </div>
+ */
+
+/* ================================================
+   基本スタイル（モバイルファースト）
+   ================================================ */
+
+/* メタ情報コンテナ */
+.el_postMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* 日付 */
+.el_postMeta_date {
+  font-size: var(--font-sm);
+  color: var(--color-gray);
+}
+
+/* カテゴリータグ */
+.el_postMeta_cat {
+  display: inline-block;
+  padding: var(--space-2xs) var(--space-xs);
+  font-size: var(--font-xs);
+  font-weight: 500;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+}
+
+/* ================================================
+   バリエーション
+   ================================================ */
+
+/* 横幅固定（リスト表示用） */
+.el_postMeta--fixed {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* 縦並び（カード内用） */
+.el_postMeta--vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+}
+
+/* 左右均等配置 */
+.el_postMeta--between {
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ================================================
+   Tablet (768px〜)
+   ================================================ */
+@media screen and (min-width: 768px) {
+  .el_postMeta_date {
+    font-size: var(--font-base);
+  }
+
+  .el_postMeta_cat {
+    font-size: var(--font-sm);
+  }
+
+  .el_postMeta--fixed {
+    width: auto;
+    min-width: 180px;
+  }
+}
+
+/* ================================================
+   PC (1024px〜)
+   ================================================ */
+@media screen and (min-width: 1024px) {
+  .el_postMeta_date {
+    font-size: var(--font-lg);
+  }
+
+  .el_postMeta--fixed {
+    min-width: 200px;
+  }
+}
