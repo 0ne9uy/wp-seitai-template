@@ -1,14 +1,14 @@
 /**
- * File: 404.css
- * Usage: 404 Not Foundページのスタイルを定義します。
- */
+ * File page-contact-thanks.css
+ * Usage: page-contact-thanks.php(お問い合わせ完了ページ)のスタイルを定義します。
+*/
 
-.ly_404 {
+.ly_contactThanks {
   background: #fff;
   padding: var(--space-3xl) var(--space-md) var(--space-6xl);
 }
 
-.bl_404Wrap {
+.bl_thanksWrap {
   padding-block: 40px 40px;
   padding-inline: 20px;
   margin-inline: auto;
@@ -18,7 +18,7 @@
   text-align: center;
 }
 
-.bl_404Ttl {
+.bl_thanksTtl {
   font-size: var(--font-2xl);
   font-weight: bold;
   color: var(--color-gold);
@@ -26,30 +26,30 @@
   margin-bottom: var(--space-lg);
 }
 
-.bl_404Message {
+.bl_thanksMessage {
   font-size: var(--font-base);
   color: var(--color-text);
   line-height: 1.8;
 }
 
-.bl_404Message p {
+.bl_thanksMessage p {
   margin-bottom: var(--space-md);
   text-align: left;
   max-width: 720px;
   margin-inline: auto;
 }
 
-.bl_404Message p:last-child {
+.bl_thanksMessage p:last-child {
   margin-bottom: 0;
 }
 
-.bl_404Actions {
+.bl_thanksActions {
   margin-top: var(--space-2xl);
   display: flex;
   justify-content: center;
 }
 
-.el_404Btn {
+.el_thanksBtn {
   display: block;
   width: 320px;
   max-width: 100%;
@@ -59,7 +59,7 @@
   border-radius: 999px;
   padding: var(--space-md);
   background:
-    url('../img/icons/submit-arr.svg') no-repeat right 16px center / 28px auto,
+    url('../../img/icons/submit-arr.svg') no-repeat right 16px center / 28px auto,
     var(--gradient-green);
   box-shadow: 2px 4px 8px 2px #23181526;
   text-decoration: none;
@@ -67,37 +67,41 @@
   transition: var(--transition-base);
 }
 
-.el_404Btn:hover {
+.el_thanksBtn:hover {
   opacity: 0.9;
 }
 
 @media screen and (min-width: 768px) {
-  .ly_404 {
+  .ly_contactThanks {
+    padding-block: var(--space-6xl) var(--space-8xl);
+  }
+
+  .ly_contactThanks {
     padding-block: 64px 120px;
     padding-inline: 40px;
   }
 
-  .bl_404Wrap {
+  .bl_thanksWrap {
     max-width: 1224px;
     padding-inline: 40px;
     padding-block: 64px 120px;
     border-radius: 48px;
   }
 
-  .bl_404Ttl {
+  .bl_thanksTtl {
     font-size: var(--font-4xl);
     margin-bottom: var(--space-xl);
   }
 
-  .bl_404Message {
+  .bl_thanksMessage {
     font-size: var(--font-lg);
   }
 
-  .bl_404Actions {
+  .bl_thanksActions {
     margin-top: var(--space-3xl);
   }
 
-  .el_404Btn {
+  .el_thanksBtn {
     padding: var(--space-md);
     font-size: var(--font-lg);
   }

@@ -1,50 +1,1127 @@
 /**
  * File: main.css
  * Usage: トップページのスタイルを定義します。
-*/
+ */
 
-.ly_fv {
+/* ========================================
+   TOPページレイアウト (.ly_top)
+   ======================================== */
+.ly_top {
+  background-color: #fff;
+}
+
+/* ========================================
+   ファーストビュー (.ly_fv) - TOPページ専用
+   ======================================== */
+.ly_top .ly_fv {
   position: relative;
-  background: rgba(0, 0, 0, 1);
-  z-index: 0;
+  background-color: #fff;
+  overflow-x: clip;
+  padding-bottom: 40px;
 }
 
-.ly_fv::before {
+.ly_top .bl_fv_inner {
+  position: relative;
+}
+
+/* スライダー */
+.ly_top .bl_fv_slider.swiper {
+  width: 100%;
+  overflow: visible;
+}
+
+.ly_top .bl_fv_slider .swiper-wrapper {
+  align-items: stretch;
+}
+
+.ly_top .bl_fv_slider .swiper-slide.bl_fv_slide {
+  width: 284px;
+  max-width: 720px;
+  height: 50vh;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ly_top .bl_fv_slide_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* キャッチコピー（縦書き・SP用） */
+.ly_top .bl_fv_catchWrap {
   position: absolute;
-  z-index: -1;
-  content: '';
-  top: 0%;
-  bottom: 10%;
-  width: 150%;
-  left: -25%;
-  background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-  -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
-  mask-image: radial-gradient(rgba(0, 0, 0, 0.45), transparent 70%);
-  pointer-events: none;
-}
-
-.bl_fvCont {
-  padding-top: 80px;
-  padding-bottom: 20px;
-}
-
-.bl_fvCont_ttl {
-  font-size: 2rem;
-  font-weight: 600;
-  color: white;
-  padding-inline: 40px;
-}
-
-.bl_fvContExp {
+  top: 16px;
+  right: 10%;
+  z-index: 10;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  padding: var(--space-xs);
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px rgba(35, 24, 21, 0.1);
 }
 
+.ly_top .bl_fv_catch_col {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  margin: 0;
+}
+
+.ly_top .bl_fv_catch_col--em {
+  color: var(--color-gold);
+}
+
+.ly_top .bl_fv_catch_em {
+  color: var(--color-gold);
+}
+
+.ly_top .bl_fv_catch_col--main {
+  color: var(--color-primary);
+}
+
+/* コンテンツエリア */
+.ly_top .bl_fv_content {
+  position: relative;
+  z-index: 1;
+  padding-block: 16px 0;
+}
+
+.ly_top .bl_fv_desc {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  padding-inline: var(--space-md);
+  margin: 0;
+  font-feature-settings: 'palt';
+}
+
+/* キャッチコピー（横書き・PC用） */
+.ly_top .bl_fv_catch--horizontal {
+  font-size: var(--font-3xl);
+  font-weight: 700;
+  margin-block: 32px 0;
+  color: var(--color-primary);
+}
+
+/* 波形装飾 */
+.ly_top .bl_fv_wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+}
+
+.ly_top .bl_fv_wave_img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ly_top .ly_featured {
+  background-color: unset !important;
+  padding-block: var(--space-5xl) 0;
+  padding-inline: var(--space-md);
+}
+
+.ly_top .ly_featured .bl_featured_inner .bl_featured_ttl,
+.ly_top .ly_featured .bl_featured_desc {
+  color: var(--color-dark) !important;
+}
+
+.ly_top .ly_featured .bl_featured_ttl span {
+  color: var(--color-primary) !important;
+}
+
+.ly_top .ly_featured .bl_featured_bgText {
+  color: var(--color-cream) !important;
+}
+
+/* ボタン */
+.ly_top .bl_case_btnWrap {
+  margin-inline: auto;
+  font-size: var(--font-base);
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.ly_top .bl_case_btnWrap .el_greenBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-inline: auto;
+  background: var(--gradient-green);
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity var(--transition-base);
+}
+
+.ly_top .bl_case_btnWrap .el_greenBtn:hover {
+  opacity: 0.8;
+}
+
+.ly_top .bl_case_btnWrap .el_greenBtn span {
+  text-align: center;
+}
+
+.ly_top .bl_case_btnWrap .el_greenBtn img {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ----------------------------------------
+   FV - タブレット (768px以上)
+   ---------------------------------------- */
 @media screen and (min-width: 768px) {
-  .bl_fvCont_ttl {
-    font-size: 5rem;
+  .ly_top .ly_fv {
+    padding-bottom: 60px;
+  }
+
+  .ly_top .bl_fv_slider.swiper {
+    padding-block: 20px 0;
+  }
+
+  .ly_top .bl_fv_slider .swiper-slide.bl_fv_slide {
+    width: 50%;
+    border-radius: var(--radius-2xl);
+  }
+
+  .ly_top .bl_fv_catchWrap {
+    display: none;
+  }
+
+  .ly_top .bl_fv_content {
+    max-width: var(--max-width-content);
+    margin-inline: auto;
+    padding-block: 32px 0;
+    padding-inline: var(--section-padding-inline);
+  }
+
+  .ly_top .bl_fv_catch--horizontal {
+    font-size: 36px;
+    margin-block: 0 16px;
+  }
+
+  .ly_top .bl_fv_desc {
+    padding-inline: 0;
+  }
+
+  .ly_top .bl_case_btnWrap {
+    margin-bottom: 108px;
   }
 }
 
-@media screen and (min-width: 1280px) {
+/* ----------------------------------------
+   FV - PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .ly_top .bl_fv_slider.swiper {
+    padding-block: 24px 0;
+  }
+
+  .ly_top .bl_fv_slider .swiper-slide.bl_fv_slide {
+    width: 55%;
+    height: 384px;
+    border-radius: 24px;
+  }
+
+  .ly_top .bl_fv_content {
+    padding-inline: 40px;
+  }
+
+  .ly_top .bl_fv_catch--horizontal {
+    font-size: 44px;
+  }
+}
+
+/* ========================================
+   選ばれる6つの理由 (.ly_reason) - TOPページ専用
+   ======================================== */
+.ly_top .ly_reason {
+  position: relative;
+  background: linear-gradient(90deg, #fffaf0 0%, var(--color-cream-dark) 100%);
+}
+
+.ly_top .bl_reason_bg {
+  background-color: var(--color-gold);
+  border-radius: 20px 20px 0 0;
+  padding-block: 64px 0px;
+}
+
+.ly_top .bl_reason_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+/* セクションヘッダー */
+.ly_top .bl_reason_header {
+  text-align: left;
+  margin-bottom: var(--space-xl);
+  color: #fff;
+}
+
+.ly_top .bl_reason_label {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  margin: 0 0 var(--space-xs);
+}
+
+.ly_top .bl_reason_title {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  margin: 0;
+}
+
+.ly_top .bl_reason_inner ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.ly_top .bl_reason_inner ul li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  max-width: 392px;
+}
+
+.ly_top .bl_reason_inner ul li .bl_reason_label {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-primary);
+  background-color: var(--color-cream-dark);
+  padding-inline: var(--space-md);
+  padding-block: 12px;
+  border-radius: var(--radius-lg);
+  margin: 0;
+}
+
+.ly_top .bl_reason_inner ul li .bl_reason_content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-inline: var(--space-xs);
+  padding-block: 8px 24px;
+  border-radius: var(--radius-lg);
+  background-color: #fff;
+  flex: 1;
+}
+
+.ly_top .bl_reason_content .el_imgWrap {
+  width: 100%;
+  height: 200px;
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.ly_top .bl_reason_content .el_imgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ly_top .bl_reason_content p {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 波形装飾 */
+.ly_top .bl_reason_wave {
+  width: 100%;
+  margin-top: var(--space-20);
+}
+
+.ly_top .bl_reason_wave_img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ----------------------------------------
+   Reason - タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .ly_top .bl_reason_bg {
+    border-radius: 32px 32px 0 0;
+  }
+
+  .ly_top .bl_reason_inner ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+
+  .ly_top .bl_reason_inner ul li {
+    width: calc(50% - 8px);
+    padding-block: 0;
+  }
+
+  .ly_top .bl_reason_wave {
+    margin-top: 40px;
+  }
+}
+
+/* ----------------------------------------
+   Reason - PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .ly_top .bl_reason_bg {
+    padding-top: var(--space-6xl);
+    border-radius: 48px 48px 0 0;
+  }
+
+  .ly_top .bl_reason_label {
+    font-size: var(--font-lg);
+  }
+
+  .ly_top .bl_reason_title {
+    font-size: var(--font-5xl);
+  }
+
+  .ly_top .bl_reason_inner {
+    padding-inline: 40px;
+  }
+
+  .ly_top .bl_reason_inner ul {
+    justify-content: center;
+    gap: var(--space-lg);
+  }
+
+  .ly_top .bl_reason_inner ul li {
+    width: calc(33.333% - 16px);
+  }
+
+  .ly_top .bl_reason_wave {
+    margin-top: 40px;
+  }
+}
+
+/* ========================================
+   採用セクション (.ly_recruitBanner)
+   ======================================== */
+.ly_recruitBanner {
+  margin-top: var(--space-5xl);
+}
+
+.bl_recruitBanner_inner {
+}
+
+/* 画像 */
+.bl_recruitBanner_imgWrap {
+  width: 100%;
+  padding: var(--space-3xl) var(--space-md) 72px var(--space-md);
+  border-radius: 20px 20px 0 0;
+  background-image: url('../img/top/top-recruit-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bl_recruitBanner_img {
+  width: 100%;
+  max-width: 528px;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+/* コンテンツ */
+.bl_recruitBanner_content {
+  background-color: var(--color-cream);
+  background-image: url('../img/logo-ashirai-bg.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: min(482px, 100%);
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  margin-top: -24px;
+  position: relative;
+  z-index: 1;
+}
+
+.bl_recruitBanner_ttl {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: var(--space-20);
+}
+
+.bl_recruitBanner_ttl_em {
+  color: var(--color-primary);
+}
+
+.bl_recruitBanner_desc {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  margin-bottom: var(--space-lg);
+}
+
+.bl_recruitBanner_desc p {
+  margin: 0;
+  font-feature-settings: 'palt';
+}
+
+/* ----------------------------------------
+   採用 - タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .ly_recruitBanner {
+    background-color: var(--color-cream);
+  }
+
+  .bl_recruitBanner_inner {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    background-color: var(--color-cream);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+  }
+
+  .bl_recruitBanner_imgWrap {
+    width: 50%;
+    flex-shrink: 0;
+    padding: var(--space-2xl);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bl_recruitBanner_img {
+    border-radius: var(--radius-xl);
+    width: 100%;
+    height: auto;
+  }
+
+  .bl_recruitBanner_content {
+    flex: 1;
+    background-color: transparent;
+    background-image: url('../img/logo-ashirai-bg.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 300px auto;
+    border-radius: 0;
+    padding: var(--space-2xl) var(--space-md);
+    margin-top: 0;
+    border-left: 1px solid #e5e5e5;
+  }
+
+  .bl_recruitBanner_ttl {
+    font-size: var(--font-2xl);
+    margin-bottom: var(--space-sm);
+    max-width: 564px;
+  }
+
+  .bl_recruitBanner_desc {
+    font-size: var(--font-base);
+    margin-bottom: var(--space-xl);
+    max-width: 564px;
+  }
+
+  .bl_recruitBanner_btn {
+    margin-left: 0;
+    padding-inline: 0;
+    height: 60px;
+  }
+}
+
+/* ----------------------------------------
+   採用 - PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .ly_recruitBanner {
+    margin-top: 96px;
+  }
+
+  .bl_recruitBanner_imgWrap {
+    padding: 60px;
+  }
+
+  .bl_recruitBanner_content {
+    padding: 60px;
+    background-size: 400px auto;
+  }
+
+  .bl_recruitBanner_ttl {
+    font-size: var(--font-3xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .bl_recruitBanner_desc {
+    font-size: var(--font-base);
+    margin-bottom: var(--space-2xl);
+  }
+}
+
+/* ========================================
+   メニュー案内 (.ly_menuGuide)
+   ======================================== */
+.ly_menuGuide {
+  position: relative;
+  padding-block: 48px 0;
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+/* 背景スクロールテキスト */
+.bl_menuGuide_bgScroll {
+  width: 100%;
+  overflow: hidden;
+  margin-block: var(--space-20);
+}
+
+.bl_menuGuide_bgTrack {
+  display: flex;
+  gap: var(--space-2xl);
+  width: max-content;
+  animation: menuGuideScroll 40s linear infinite;
+}
+
+.bl_menuGuide_bgText {
+  flex-shrink: 0;
+  font-size: var(--font-7xl);
+  font-weight: 700;
+  color: var(--color-cream);
+  white-space: nowrap;
+}
+
+@keyframes menuGuideScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* インナー */
+.bl_menuGuide_inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ヘッダー */
+.bl_menuGuide_header {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+  padding-inline: var(--section-padding-inline);
+}
+
+.bl_menuGuide_desc {
+  font-size: var(--font-base);
+  font-feature-settings: 'palt';
+  color: var(--color-dark);
+}
+
+/* スライダーラッパー */
+.bl_menuGuide_sliderWrap {
+  position: relative;
+  width: 100%;
+}
+
+/* ナビゲーションボタン */
+.bl_menuGuide_btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transform: translateY(-100%);
+}
+
+.bl_menuGuide_btn__prev {
+  left: 0;
+}
+
+.bl_menuGuide_btn__next {
+  right: 0;
+}
+
+/* Swiperコンテナ */
+.bl_menuGuide_slider {
+  width: 100%;
+}
+
+.bl_menuGuideSwiper {
+  overflow: visible;
+}
+
+.bl_menuGuide_slide {
+  height: auto;
+}
+
+/* カード */
+.bl_menuGuide_card {
+  display: block;
+  text-decoration: none;
+  transition: opacity var(--transition-base);
+}
+
+.bl_menuGuide_card:hover {
+  opacity: 0.8;
+}
+
+.bl_menuGuide_card_imgWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.bl_menuGuide_card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bl_menuGuide_card_noImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: var(--font-sm);
+  color: var(--color-gray);
+}
+
+.bl_menuGuide_card_ttl {
+  margin-top: var(--space-md);
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: center;
+}
+
+.ly_voiceList .bl_sectionHeader .bl_voiceList_desc {
+  color: var(--color-white);
+}
+
+/* ----------------------------------------
+   メニュー案内 - タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .ly_menuGuide {
+    padding-block: 80px 120px;
+  }
+
+  .bl_menuGuide_bgText {
+    font-size: var(--font-8xl);
+  }
+
+  /* ヘッダー */
+  .bl_menuGuide_header {
+    margin-bottom: var(--space-xl);
+    padding-inline: 0;
+  }
+
+  .bl_menuGuide_desc {
+    font-size: var(--font-base);
+    text-align: left;
+  }
+
+  /* ナビゲーションボタン位置調整 */
+  .bl_menuGuide_btn {
+    transform: translateY(-120%);
+  }
+
+  .bl_menuGuide_btn__prev {
+    left: 16px;
+  }
+
+  .bl_menuGuide_btn__next {
+    right: 16px;
+  }
+
+  .bl_menuGuide_card_imgWrap {
+    aspect-ratio: 19 / 16;
+    border-radius: var(--radius-xl);
+  }
+
+  .bl_menuGuide_card_ttl {
+    margin-top: var(--space-20);
+    font-size: var(--font-xl);
+  }
+}
+
+/* ----------------------------------------
+   メニュー案内 - PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .ly_menuGuide {
+    padding-block: 100px 0px;
+  }
+
+  .bl_menuGuide_bgScroll {
+    margin-block: 0;
+  }
+
+  .bl_menuGuide_bgText {
+    font-size: var(--font-9xl);
+  }
+
+  .bl_menuGuide_desc {
+    font-size: var(--font-base);
+  }
+
+  .bl_menuGuide_btn__prev {
+    left: 24px;
+  }
+
+  .bl_menuGuide_btn__next {
+    right: 24px;
+  }
+
+  .bl_menuGuide_card_imgWrap {
+    border-radius: var(--radius-2xl);
+  }
+
+  .bl_menuGuide_card_ttl {
+    margin-top: var(--space-lg);
+    font-size: var(--font-xl);
+  }
+}
+
+/* ========================================
+   症例報告 (.ly_case)
+   ======================================== */
+
+.ly_top .ly_case {
+  margin-top: 0;
+}
+
+.ly_top .bl_case_header {
+  padding-inline: 0;
+}
+
+.ly_case .bl_case_btn__prev {
+  left: -12px;
+}
+
+.ly_case .bl_case_btn__next {
+  right: -12px;
+}
+
+.ly_case .bl_case_btn__prev,
+.ly_case .bl_case_btn__next {
+  border-radius: 50%;
+  margin-top: 64px;
+  box-shadow: 2px 2px 8px 2px #2318151a;
+}
+
+/* ========================================
+   お客様の声 (.ly_voiceList)
+   ======================================== */
+
+.ly_top .bl_voiceList_header {
+  padding-inline: 0;
+  max-width: 1220px;
+  margin-inline: auto;
+}
+
+.ly_voiceList .bl_voiceList_btn__prev,
+.ly_voiceList .bl_voiceList_btn__next {
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 2px #2318151a;
+}
+
+/* ========================================
+   店舗一覧 (.ly_shopList) - トップページ固有
+   カード・タブの共通スタイルは shop-card.css に分離
+   ======================================== */
+.ly_shopList {
+  padding: 0 var(--space-md);
+  padding-block: 48px;
+  background-color: var(--color-cream);
+  background-image: url('../img/top/top-shoplist-bg.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bl_shopList_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+/* タブコンテナ */
+.bl_shopList_tabContainer {
+  position: relative;
+}
+
+/* エリアタブ */
+.bl_shopList_tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* 店舗パネル */
+.bl_shopList_panelWrap {
+  background-color: var(--color-primary-dark);
+  border-radius: 0 0 16px 16px;
+  padding: var(--space-xs);
+}
+
+/* ----------------------------------------
+   店舗一覧 - タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .ly_shopList {
+    padding: 0 var(--space-lg);
+  }
+
+  .bl_shopList_panelWrap {
+    border-radius: 0 24px 24px 24px;
+    padding: var(--space-xl) var(--space-lg);
+  }
+}
+
+/* ----------------------------------------
+   店舗一覧 - PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .ly_shopList {
+    padding: 0;
+    padding-block: 126px 80px;
+    padding-inline: 40px;
+  }
+
+  .bl_shopList_panelWrap {
+    border-radius: 0 32px 32px 32px;
+    padding: 28px var(--space-lg);
+  }
+}
+
+/* ========================================
+   コラムセクション (.ly_columnList)
+   ======================================== */
+.ly_columnList {
+  padding-inline: var(--section-padding-inline);
+  background-color: #fff;
+}
+
+.bl_columnList_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bl_columnList_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+/* コラムリスト（SP: カード形式 1カラム） */
+.bl_columnList_list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.bl_columnItem {
+  border-radius: var(--radius-lg);
+  background: var(--color-cream);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-xs) var(--space-xs) var(--space-md) var(--space-xs);
+  overflow: hidden;
+}
+
+.bl_columnItem_link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* サムネイル */
+.bl_columnItem_thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.bl_columnItem_thumb_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bl_columnItem_content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-inline: var(--space-xs);
+}
+
+.bl_columnItem_meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.bl_columnItem_cat {
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-xs);
+  background: var(--color-primary);
+  color: white;
+}
+
+.bl_columnItem_body {
+  width: 100%;
+}
+
+.bl_columnItem_ttl {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-dark);
+}
+
+/* ----------------------------------------
+   コラム - タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .ly_columnList {
+    padding-inline: var(--section-padding-inline);
+  }
+
+  .bl_columnList_moreBtn {
+    max-width: 240px;
+    margin-right: 0;
+  }
+
+  .bl_columnList_list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .bl_columnItem {
+    padding: var(--space-sm) var(--space-sm) var(--space-20) var(--space-sm);
+  }
+
+  .bl_columnItem_date {
+    font-size: var(--font-base);
+  }
+
+  .bl_columnItem_cat {
+    font-size: var(--font-sm);
+  }
+
+  .bl_columnItem_ttl {
+    font-size: var(--font-base);
+  }
+}
+
+/* ----------------------------------------
+   コラム - PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .ly_columnList {
+    padding-inline: var(--section-padding-inline);
+  }
+
+  /*
+   * Note: .ly_columnList .bl_sectionTtlWrap のマージンは base.css に統合済み
+   */
+
+  .bl_columnList_list {
+    grid-template-columns: 392px 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: var(--space-lg);
+  }
+
+  /* 最初のアイテム（大きなカード）- 左列全体 */
+  .bl_columnItem:first-child {
+    grid-row: 1 / 4;
+    padding: var(--space-xs);
+  }
+
+  .bl_columnItem:first-child .bl_columnItem_link {
+    height: 100%;
+  }
+
+  .bl_columnItem:first-child .bl_columnItem_thumb {
+    max-height: 200px;
+    max-width: 392px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .bl_columnItem:first-child .bl_columnItem_content {
+    gap: var(--space-sm);
+    padding-top: 8px;
+  }
+
+  .bl_columnItem:first-child .bl_columnItem_date {
+    font-size: var(--font-lg);
+  }
+
+  .bl_columnItem:first-child .bl_columnItem_cat {
+    font-size: var(--font-sm);
+  }
+
+  .bl_columnItem:first-child .bl_columnItem_ttl {
+    font-size: var(--font-lg);
+  }
+
+  /* 2番目以降のアイテム（小さな横並びカード）- 右列 */
+  .bl_columnItem:not(:first-child) {
+    padding: var(--space-xs);
+  }
+
+  .bl_columnItem:not(:first-child) .bl_columnItem_link {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+
+  .bl_columnItem:not(:first-child) .bl_columnItem_thumb {
+    width: 160px;
+    flex-shrink: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .bl_columnItem:not(:first-child) .bl_columnItem_content {
+    flex: 1;
+    padding-inline: 0;
+    justify-content: center;
+  }
+
+  .bl_columnItem:not(:first-child) .bl_columnItem_date {
+    font-size: var(--font-base);
+  }
+
+  .bl_columnItem:not(:first-child) .bl_columnItem_cat {
+    font-size: var(--font-xs);
+  }
+
+  .bl_columnItem:not(:first-child) .bl_columnItem_ttl {
+    font-size: var(--font-base);
+  }
 }

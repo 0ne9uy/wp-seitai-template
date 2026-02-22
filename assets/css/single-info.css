@@ -1,0 +1,151 @@
+/**
+ * noras original theme
+ * Single CSS: お知らせ記事
+ * @author: shirako
+ * @link: https://norasinc.jp
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
+/* ===========================================
+   Mobile First Base Styles
+   =========================================== */
+
+/* お知らせ記事ページ専用スタイル */
+.un_info {
+    background-color: var(--color-white);
+    padding-inline: 8px;
+    padding-block: 40px;
+}
+
+.un_info .ly_normalSec {
+    border-radius: 12px;
+    background-color: #fff9ef;
+    padding-inline: 16px;
+    padding-block: 40px;
+}
+
+.bl_info_content {
+    max-width: 880px;
+    margin-inline: auto;
+}
+
+.un_info .bl_postHeader {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #FEEFD0;
+}
+
+/* 投稿日と店舗名 横並び */
+.un_info .el_postMeta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.un_info .el_postMeta time {
+    font-size: var(--font-sm);
+    color: var(--color-gray);
+}
+
+.un_info .el_postShop {
+    font-size: var(--font-xs);
+    padding: var(--space-2xs) var(--space-xs);
+    border-radius: var(--radius-xs);
+    background: var(--color-primary);
+    color: white;
+}
+
+/* タイトル */
+.un_info .el_postTtl {
+    font-family: var(--font-zenmaru);
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-dark);
+}
+
+/* 一覧へ戻るボタン */
+.un_info .bl_info_btnWrap {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.un_info .bl_info_btnWrap .el_greenBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--gradient-green);
+    color: var(--color-white);
+    font-weight: var(--font-bold);
+    padding: 12px 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 2px 4px 8px 2px rgba(35, 24, 21, 0.15);
+    transition: opacity 0.3s;
+}
+
+.un_info .bl_info_btnWrap .el_greenBtn:hover {
+    opacity: 0.8;
+}
+
+.un_info .bl_info_btnWrap .el_greenBtn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ===========================================
+   Tablet (768px ~)
+   =========================================== */
+@media screen and (min-width: 768px) {
+    .un_info {
+        padding-inline: 40px;
+        padding-block: 60px;
+    }
+
+    .un_info .ly_normalSec {
+        padding-inline: 40px;
+        padding-block: 60px;
+    }
+
+    .un_info .el_postMeta time {
+        font-size: var(--font-base);
+    }
+
+    .un_info .el_postShop {
+        font-size: var(--font-sm);
+    }
+
+    .un_info .el_postTtl {
+        font-size: var(--font-2xl);
+    }
+
+    .un_info .bl_info_btnWrap {
+        margin-top: 60px;
+    }
+
+    .un_info .bl_info_btnWrap .el_greenBtn {
+        padding: 16px 48px;
+        font-size: var(--font-lg);
+    }
+}
+
+/* ===========================================
+   Desktop (1024px ~)
+   =========================================== */
+@media screen and (min-width: 1024px) {
+    .un_info {
+        padding-block: 80px;
+    }
+
+    .un_info .ly_normalSec {
+        padding-block: 80px 120px;
+        max-width: 1224px;
+        margin-inline: auto;
+        border-radius: 48px;
+    }
+
+    .un_info .el_postTtl {
+        font-size: var(--font-3xl);
+    }
+}

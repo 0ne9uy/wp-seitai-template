@@ -50,13 +50,11 @@
   /* === グラデーション === */
   --gradient-cta: linear-gradient(180deg, #f33500 0%, #f39800 100%);
   --gradient-green: linear-gradient(90deg, #86bf00 0%, #20ae4f 100%);
-  --gradient-green-vertical: linear-gradient(180deg,
-      #86bf00 0.06%,
-      #20ae4f 99.94%);
+  --gradient-green-vertical: linear-gradient(180deg, #86bf00 0.06%, #20ae4f 99.94%);
   --gradient-yellow: linear-gradient(180deg, #fdcd73 0%, #f39800 100%);
-  --gradient-overlay: linear-gradient(0deg,
-      #f39800 0%,
-      rgba(243, 152, 0, 0) 100%);
+  --gradient-overlay: linear-gradient(0deg, #f39800 0%, rgba(243, 152, 0, 0) 100%);
+  --gradient-blue-web: linear-gradient(90deg, #00c3d5 0%, #0073c5 100%);
+  --gradient-phone: linear-gradient(270deg, #f33500 0%, var(--color-primary) 100%);
 
   /* === レイアウト === */
   --max-width-content: 1304px;
@@ -975,7 +973,7 @@ html::-webkit-scrollbar {
   display: flex;
   gap: var(--space-sm);
   padding-block: 10px;
-  background: linear-gradient(90deg, #86bf00 0%, #20ae4f 100%);
+  background: var(--gradient-green);
   color: #fff;
   font-weight: 700;
   border-radius: 999px;
@@ -1274,15 +1272,15 @@ body.is_menuOpen {
 }
 
 .bl_floatingBtn--web {
-  background: linear-gradient(90deg, #00c3d5 0%, #0073c5 100%);
+  background: var(--gradient-blue-web);
 }
 
 .bl_floatingBtn--line {
-  background: linear-gradient(90deg, #86bf00 0%, #20ae4f 100%);
+  background: var(--gradient-green);
 }
 
 .bl_floatingBtn--phone {
-  background: linear-gradient(270deg, #f33500 0%, var(--color-primary) 100%);
+  background: var(--gradient-phone);
 }
 
 /* パネルモーダル共通（WEB予約・LINE予約） */

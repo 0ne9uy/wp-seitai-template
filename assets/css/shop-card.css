@@ -1,0 +1,323 @@
+/* ========================================
+   店舗カード・タブ共通スタイル
+   モーダル・トップページ両方で使用
+   ======================================== */
+
+/* エリアタブ */
+.bl_shopList_tab {
+  padding: 10px var(--space-lg);
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  background-color: var(--color-cream-dark);
+  border: none;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  width: 50%;
+}
+
+.bl_shopList_tab.is-active {
+  color: #fff;
+  background-color: var(--color-primary-dark);
+}
+
+.bl_shopList_tab:hover:not(.is-active) {
+  background-color: #f5e6c8;
+}
+
+/* 店舗パネル */
+.bl_shopList_panel {
+  display: none;
+}
+
+.bl_shopList_panel.is-active {
+  display: block;
+}
+
+/* 店舗グリッド */
+.bl_shopList_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xs);
+}
+
+/* 店舗カード */
+.bl_shopCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-2xs);
+  background: unset;
+  background-color: unset;
+  border: none;
+  overflow: hidden;
+}
+
+.bl_shopCard_header {
+  width: 100%;
+  padding: var(--space-sm) var(--space-20);
+  border-radius: var(--radius-md);
+  background-color: var(--color-cream-dark);
+}
+
+.bl_shopCard_name {
+  margin: 0;
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.bl_shopCard_body {
+  padding: var(--space-xs);
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 249, 239, 1);
+  color: rgba(255, 249, 239, 1);
+  width: 100%;
+}
+
+/* マップ */
+.bl_shopCard_map {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+}
+
+.bl_shopCard_map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 住所 */
+.bl_shopCard_address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 4px;
+}
+
+.bl_shopCard_addressIcon {
+  flex-shrink: 0;
+  margin-top: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.bl_shopCard_address p {
+  margin: 0;
+  font-size: var(--font-sm);
+  color: var(--color-dark);
+}
+
+/* ボタン・リンクまとめ */
+.bl_shopCard_actions {
+  background-color: #fff;
+  border-radius: var(--radius-xs);
+}
+
+/* ボタン群 */
+.bl_shopCard_btns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border-bottom: 1px solid var(--color-cream-dark);
+  padding-block: 12px;
+  max-width: 240px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.bl_shopCard_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 14px var(--space-md);
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: opacity var(--transition-base) ease;
+}
+
+.bl_shopCard_btn:hover {
+  opacity: 0.85;
+}
+
+.bl_shopCard_btn img,
+.bl_shopCard_btn svg {
+  flex-shrink: 0;
+}
+
+/* WEB予約ボタン */
+.bl_shopCard_btn--web {
+  background: var(--gradient-blue-web);
+  box-shadow: 2px 4px 8px 2px rgba(35, 24, 21, 0.15);
+}
+
+/* 電話・LINEボタン行 */
+.bl_shopCard_btnRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.bl_shopCard_btnRow .bl_shopCard_btn {
+  flex: 1;
+}
+
+/* 電話ボタン */
+.bl_shopCard_btn--phone {
+  background: var(--gradient-phone);
+  box-shadow: 2px 4px 8px 2px rgba(35, 24, 21, 0.15);
+}
+
+/* LINEボタン */
+.bl_shopCard_btn--line {
+  background: var(--gradient-green);
+  box-shadow: 2px 4px 8px 2px rgba(35, 24, 21, 0.15);
+}
+
+/* 詳細リンク */
+.bl_shopCard_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  padding: var(--space-sm);
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--color-dark);
+  transition: all var(--transition-base);
+}
+
+.bl_shopCard_link:hover {
+  opacity: 0.7;
+}
+
+.bl_shopCard_link img,
+.bl_shopCard_link svg {
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------
+   店舗カード - タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .bl_shopList_tab {
+    padding: var(--space-sm) var(--space-2xl);
+    font-size: var(--font-base);
+    width: 160px;
+  }
+
+  .bl_shopList_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .bl_shopCard_header {
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  .bl_shopCard_name {
+    font-size: var(--font-xl);
+  }
+
+  .bl_shopCard_body {
+    padding: var(--space-sm);
+  }
+
+  .bl_shopCard_map {
+    margin-bottom: var(--space-20);
+    max-height: 240px;
+  }
+
+  .bl_shopCard_address {
+    margin-bottom: var(--space-lg);
+  }
+
+  .bl_shopCard_address p {
+    font-size: var(--font-base);
+  }
+
+  .bl_shopCard_btn {
+    padding: var(--space-md);
+    font-size: var(--font-base);
+  }
+
+  .bl_shopCard_btn--phone {
+    font-size: var(--font-base);
+  }
+
+  .bl_shopCard_link {
+    font-size: var(--font-base);
+  }
+}
+
+/* ----------------------------------------
+   店舗カード - PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .bl_shopList_tab {
+    padding: 14px 56px;
+    font-size: var(--font-lg);
+  }
+
+  .bl_shopCard_header {
+    padding: var(--space-sm) 28px;
+  }
+
+  .bl_shopCard_name {
+    font-size: var(--font-xl);
+  }
+
+  .bl_shopCard_body {
+    padding: var(--space-sm);
+  }
+
+  .bl_shopCard_map {
+    margin-bottom: var(--space-lg);
+  }
+
+  .bl_shopCard_address {
+    margin-bottom: var(--space-xl);
+  }
+
+  .bl_shopCard_address p {
+    font-size: var(--font-lg);
+  }
+
+  .bl_shopCard_btns {
+    border-bottom: unset;
+    padding-block: unset;
+    max-width: 480px;
+  }
+
+  .bl_shopCard_actions {
+    padding-block: 20px 24px;
+  }
+
+  .bl_shopCard_btn {
+    font-size: var(--font-md);
+  }
+
+  .bl_shopCard_btnRow {
+    flex-direction: row;
+    gap: var(--space-sm);
+    padding-block: 12px;
+    border-top: 1px solid var(--color-cream-dark);
+    border-bottom: 1px solid var(--color-cream-dark);
+  }
+
+  .bl_shopCard_link {
+    padding: unset;
+    padding-top: 20px;
+    font-size: var(--font-lg);
+  }
+}
