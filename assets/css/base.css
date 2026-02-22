@@ -390,12 +390,22 @@ html::-webkit-scrollbar {
   display: none !important;
 }
 
-/* ================================================  
+/* ================================================
   レイアウト
 ================================================ */
 /* 全体のレイアウト */
 .ly_cont {
   padding-inline: var(--pad-inner);
+}
+
+/* アーカイブページ共通レイアウト */
+.ly_cont.ly_column,
+.ly_cont.ly_case,
+.ly_cont.ly_voice,
+.ly_cont.ly_info {
+  background-color: var(--color-white);
+  padding-inline: 6px;
+  padding-block: 40px 80px;
 }
 
 /* ヘッダー */
@@ -1499,6 +1509,14 @@ body.is_menuOpen {
 
   .ly_cont {
     margin-inline: auto;
+  }
+
+  /* アーカイブページ共通レイアウト（PC） */
+  .ly_cont.ly_column,
+  .ly_cont.ly_case,
+  .ly_cont.ly_voice,
+  .ly_cont.ly_info {
+    padding-block: 70px 120px;
   }
 
   .ly_normalSec {

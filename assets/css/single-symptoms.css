@@ -115,15 +115,6 @@
   border-radius: 2px;
 }
 
-/* FV: サブタイトル */
-.bl_symptomsFv_subTtl {
-  margin-top: 16px;
-  font-size: var(--font-lg);
-  font-weight: 700;
-  color: var(--color-dark);
-  text-align: center;
-}
-
 /* FV: 実績ボックス */
 .bl_symptomsFv_stats {
   display: flex;
@@ -374,357 +365,6 @@
   --faq-toggle-color: var(--color-primary-dark);
 }
 
-/* もっと見るボタン（症例報告セクション専用） */
-.bl_case_moreBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
-  width: fit-content;
-  margin: 32px auto 0;
-  padding: 12px 32px;
-  background-color: transparent;
-  border: 2px solid var(--color-primary-dark);
-  border-radius: 9999px;
-  color: var(--color-primary-dark);
-  font-size: var(--font-sm);
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.bl_case_moreBtn:hover {
-  background-color: var(--color-primary-dark);
-  color: #fff;
-}
-
-.bl_case_moreBtn_arrow {
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid currentColor;
-  border-right: 2px solid currentColor;
-  transform: rotate(45deg);
-}
-
-/* ========================================
-   記事詳細
-   ======================================== */
-.bl_symptomsDetail {
-  max-width: 800px;
-  margin-inline: auto;
-}
-
-.bl_symptomsDetail_header {
-  margin-bottom: 24px;
-}
-
-.bl_symptomsDetail_cats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-bottom: 12px;
-}
-
-.el_catLabel {
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--color-primary-dark);
-  background-color: var(--color-cream);
-  border: 1px solid var(--color-primary-dark);
-  border-radius: 100px;
-  transition: all 0.2s ease;
-}
-
-.el_catLabel:hover {
-  background-color: var(--color-primary-dark);
-  color: #fff;
-}
-
-.bl_symptomsDetail_ttl {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-text);
-}
-
-.bl_symptomsDetail_thumb {
-  margin-bottom: 32px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.bl_symptomsDetail_thumbImg {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-/* 記事本文 */
-.bl_symptomsDetail_content {
-  font-size: 1rem;
-  color: var(--color-text);
-}
-
-.bl_symptomsDetail_content h2 {
-  margin-top: 48px;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  font-size: 1.375rem;
-  font-weight: 700;
-  color: var(--color-text);
-  border-bottom: 2px solid var(--color-primary-dark);
-}
-
-.bl_symptomsDetail_content h3 {
-  margin-top: 32px;
-  margin-bottom: 12px;
-  padding-left: 12px;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-text);
-  border-left: 4px solid var(--color-primary-dark);
-}
-
-.bl_symptomsDetail_content h4 {
-  margin-top: 24px;
-  margin-bottom: 8px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-text);
-}
-
-.bl_symptomsDetail_content p {
-  margin-bottom: 16px;
-}
-
-.bl_symptomsDetail_content ul,
-.bl_symptomsDetail_content ol {
-  margin-bottom: 16px;
-  padding-left: 1.5em;
-}
-
-.bl_symptomsDetail_content li {
-  margin-bottom: 8px;
-  list-style: disc;
-}
-
-.bl_symptomsDetail_content ol li {
-  list-style: decimal;
-}
-
-.bl_symptomsDetail_content img {
-  margin-block: 24px;
-  border-radius: var(--radius-md);
-}
-
-.bl_symptomsDetail_content a {
-  color: var(--color-primary-dark);
-  text-decoration: underline;
-}
-
-.bl_symptomsDetail_content a:hover {
-  text-decoration: none;
-}
-
-.bl_symptomsDetail_content blockquote {
-  margin-block: 24px;
-  padding: 16px 20px;
-  background-color: var(--color-cream);
-  border-left: 4px solid var(--color-primary-dark);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-}
-
-.bl_symptomsDetail_content table {
-  width: 100%;
-  margin-block: 24px;
-  border-collapse: collapse;
-}
-
-.bl_symptomsDetail_content th,
-.bl_symptomsDetail_content td {
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-.bl_symptomsDetail_content th {
-  background-color: var(--color-cream);
-  font-weight: 700;
-}
-
-/* ========================================
-   CTA セクション
-   ======================================== */
-.bl_symptomsCta {
-  margin-top: 48px;
-  padding: 32px 20px;
-  background: linear-gradient(135deg, var(--color-cream) 0%, #FFF5E0 100%);
-  border-radius: var(--radius-xl);
-  text-align: center;
-}
-
-.bl_symptomsCta_lead {
-  margin-bottom: 20px;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-text);
-}
-
-.bl_symptomsCta_btns {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  max-width: 320px;
-  margin-inline: auto;
-}
-
-.bl_symptomsCta .el_btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 24px;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 100px;
-  transition: all 0.3s ease;
-}
-
-.bl_symptomsCta .el_btn__primary {
-  color: #fff;
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
-  box-shadow: 0 4px 12px rgba(248, 182, 45, 0.3);
-}
-
-.bl_symptomsCta .el_btn__primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(248, 182, 45, 0.4);
-}
-
-.bl_symptomsCta .el_btn__line {
-  color: #fff;
-  background: linear-gradient(135deg, #06C755 0%, #05a847 100%);
-  box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);
-}
-
-.bl_symptomsCta .el_btn__line:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(6, 199, 85, 0.4);
-}
-
-/* ========================================
-   関連するお悩み
-   ======================================== */
-.bl_relatedSymptoms {
-  margin-top: 64px;
-  padding-top: 48px;
-  border-top: 1px solid #eee;
-}
-
-.bl_relatedSymptoms_ttl {
-  margin-bottom: 24px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-text);
-  text-align: center;
-}
-
-.bl_relatedSymptoms_list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
-}
-
-.bl_relatedSymptoms_item {
-  list-style: none;
-}
-
-.bl_relatedSymptoms_link {
-  display: block;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-}
-
-.bl_relatedSymptoms_link:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.bl_relatedSymptoms_thumb {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-
-.bl_relatedSymptoms_thumbImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.bl_relatedSymptoms_link:hover .bl_relatedSymptoms_thumbImg {
-  transform: scale(1.05);
-}
-
-.bl_relatedSymptoms_thumb__noImg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5;
-}
-
-.bl_relatedSymptoms_noImgTxt {
-  font-size: 0.75rem;
-  color: #999;
-}
-
-.bl_relatedSymptoms_name {
-  padding: 12px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-text);
-}
-
-/* ========================================
-   戻るナビゲーション
-   ======================================== */
-.bl_backNav {
-  margin-top: 48px;
-  text-align: center;
-}
-
-.bl_backNav_link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: 12px 24px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-gray);
-  background-color: #f5f5f5;
-  border-radius: 100px;
-  transition: all 0.2s ease;
-}
-
-.bl_backNav_link:hover {
-  color: var(--color-text);
-  background-color: #eee;
-}
-
-.bl_backNav_arrow {
-  position: relative;
-  width: 8px;
-  height: 8px;
-  border-left: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg);
-}
-
 /* ========================================
    選ばれる理由
    ※ コンポーネント化済み: assets/css/components/reason-card.css
@@ -737,24 +377,6 @@
   padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-bottom);
   background: linear-gradient(180deg, var(--color-cream) 0%, #FFEFD5 48.71%, var(--color-gold) 100%);
   filter: drop-shadow(4px 4px 20px rgba(35, 24, 21, 0.05));
-}
-
-.bl_symptoms_header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  max-width: 1200px;
-  margin-inline: auto;
-  margin-bottom: 32px;
-}
-
-.bl_symptoms_header .bl_sectionTtlWrap {
-  margin-bottom: 0;
-}
-
-.bl_symptoms_desc {
-  font-size: var(--font-base);
-  color: var(--color-dark);
 }
 
 .ly_symptoms__single .bl_symptomsCatList {
@@ -801,11 +423,6 @@
   .bl_symptomsFv_ttl_emphasis,
   .bl_symptomsFv_ttl span {
     font-size: 36px;
-  }
-
-  .bl_symptomsFv_subTtl {
-    margin-top: 20px;
-    font-size: var(--font-xl);
   }
 
   .bl_symptomsFv_stats {
@@ -912,99 +529,11 @@
     gap: var(--space-20);
   }
 
-  /* 症例報告もっと見るボタン */
-  .bl_case_moreBtn {
-    margin-top: 40px;
-    padding: 14px 40px;
-    font-size: var(--font-base);
-  }
-
-  /* 記事詳細 */
-  .bl_symptomsDetail_header {
-    margin-bottom: 32px;
-  }
-
-  .bl_symptomsDetail_ttl {
-    font-size: 2rem;
-  }
-
-  .bl_symptomsDetail_thumb {
-    margin-bottom: 40px;
-  }
-
-  .bl_symptomsDetail_content {
-    font-size: 1.0625rem;
-  }
-
-  .bl_symptomsDetail_content h2 {
-    font-size: 1.5rem;
-  }
-
-  .bl_symptomsDetail_content h3 {
-    font-size: 1.25rem;
-  }
-
-  /* CTA */
-  .bl_symptomsCta {
-    margin-top: 64px;
-    padding: 40px;
-  }
-
-  .bl_symptomsCta_lead {
-    font-size: 1.25rem;
-  }
-
-  .bl_symptomsCta_btns {
-    flex-direction: row;
-    justify-content: center;
-    max-width: none;
-    gap: var(--space-md);
-  }
-
-  .bl_symptomsCta .el_btn {
-    min-width: 240px;
-  }
-
-  /* 関連お悩み */
-  .bl_relatedSymptoms {
-    margin-top: 80px;
-    padding-top: 64px;
-  }
-
-  .bl_relatedSymptoms_ttl {
-    margin-bottom: 32px;
-    font-size: 1.5rem;
-  }
-
-  .bl_relatedSymptoms_list {
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
-  }
-
-  .bl_relatedSymptoms_name {
-    padding: 16px;
-    font-size: 1rem;
-  }
-
-  /* 戻るナビ */
-  .bl_backNav {
-    margin-top: 64px;
-  }
-
-  .bl_backNav_link {
-    padding: 14px 32px;
-    font-size: 1rem;
-  }
-
   /* 選ばれる理由 → コンポーネント化: components/reason-card.css */
 
   /* 他のお悩みから探す */
   .ly_symptoms__single {
     padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-bottom);
-  }
-
-  .bl_symptoms_header {
-    margin-bottom: 40px;
   }
 }
 
@@ -1012,11 +541,6 @@
    PC (1024px〜)
    ======================================== */
 @media screen and (min-width: 1024px) {
-  .ly_subp__singleSymptoms {}
-
-  .bl_symptomsDetail_ttl {
-    font-size: 2.25rem;
-  }
 
   /* お客様の声スライダー */
   .ly_customerVoice {
@@ -1091,11 +615,6 @@
     gap: var(--space-lg);
   }
 
-  /* 症例報告もっと見るボタン */
-  .bl_case_moreBtn {
-    margin-top: 48px;
-  }
-
   /* FV */
   .ly_symptomsFv {
     padding: 60px 60px 80px;
@@ -1116,11 +635,6 @@
   .bl_symptomsFv_ttl_emphasis,
   .bl_symptomsFv_ttl span {
     font-size: var(--font-6xl);
-  }
-
-  .bl_symptomsFv_subTtl {
-    margin-top: 24px;
-    font-size: var(--font-2xl);
   }
 
   .bl_symptomsFv_stats {
@@ -1157,22 +671,6 @@
   /* 他のお悩みから探す */
   .ly_symptoms__single {
     padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-bottom);
-  }
-
-  .bl_symptoms_header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-  }
-
-  .bl_symptoms_header .bl_sectionTtlWrap {
-    flex-shrink: 0;
-  }
-
-  .bl_symptoms_desc {
-    font-size: var(--font-base);
-    text-align: right;
   }
 }
 
