@@ -1,0 +1,1355 @@
+/**
+ * noras original theme
+ * Page CSS: 初めての方へ
+ * @author: shirako
+ * @link: https://norasinc.jp
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
+/* ========================================
+   レイアウト (.ly_first)
+   ======================================== */
+.ly_first {
+  background-color: #fff;
+}
+
+/* ========================================
+   イントロセクション (.bl_firstIntro)
+   ======================================== */
+.bl_firstIntro {
+  position: relative;
+  background-color: var(--color-gold);
+  padding-top: 48px;
+}
+
+.bl_firstIntro_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+  padding-inline: var(--section-padding-inline);
+}
+
+/* 挨拶文 */
+.bl_firstIntro_greeting {
+  position: relative;
+  text-align: center;
+}
+
+.bl_firstIntro_greeting_bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: 280px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bl_firstIntro_greeting_txt {
+  position: relative;
+  z-index: 1;
+  font-size: var(--font-base);
+  color: #fff;
+  text-align: left;
+  margin: 0;
+}
+
+.bl_firstIntro_greeting_txt+.bl_firstIntro_greeting_txt {
+  margin-block: 20px 0;
+}
+
+/* メイン画像 */
+.bl_firstIntro_imgWrap {
+  margin-block: 32px 0;
+}
+
+.bl_firstIntro_img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* なぜ改善しなかったのか */
+.bl_firstIntro_reason {
+  text-align: center;
+  margin-block: 32px 0;
+}
+
+.bl_firstIntro_reason_ttl {
+  font-size: var(--font-2xl);
+  text-align: left;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.bl_firstIntro_reason_txt {
+  font-size: var(--font-base);
+  color: #fff;
+  text-align: left;
+  margin-block: 20px 0;
+}
+
+.bl_firstIntro_reason_txt+.bl_firstIntro_reason_txt {
+  margin-block: 16px 0;
+}
+
+/* SP専用画像 */
+.bl_firstIntro_spImg {
+  margin-block: 24px 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.bl_firstIntro_spImg_img {
+  width: 100%;
+  height: auto;
+}
+
+/* なぜ？の解説 */
+.bl_firstIntro_why {
+  text-align: center;
+}
+
+.bl_firstIntro_why_txt {
+  font-size: var(--font-base);
+  font-weight: 500;
+  color: #fff;
+  text-align: left;
+  margin-block: 20px 0;
+}
+
+/* 波形画像 */
+.bl_firstIntro_wave {
+  width: 100%;
+}
+
+.bl_firstIntro_wave_img {
+  width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   独自アプローチセクション (.bl_firstApproach)
+   ======================================== */
+.bl_firstApproach {
+  background-color: #fff;
+  padding-inline: 16px;
+  padding-block: var(--space-5xl) 40px;
+}
+
+.bl_firstApproach_inner {
+  margin-inline: auto;
+}
+
+/* セクションタイトル */
+.bl_firstApproach_ttl {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: left;
+  margin: 0;
+}
+
+.bl_firstApproach_ttl_em {
+  color: var(--color-primary);
+}
+
+.bl_firstApproach_lead {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  margin-block: 20px 0;
+}
+
+/* カード共通 */
+.bl_firstApproach_cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-block: 32px 0;
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+.bl_firstApproach_card_label {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+  padding-block: 12px 13px;
+  padding-inline: 12px;
+  border-radius: var(--radius-lg);
+  background: var(--color-cream-dark);
+  box-shadow: var(--shadow-card);
+}
+
+.bl_firstApproach_card_imgWrap_inner {
+  margin-top: 4px;
+  border-radius: var(--radius-lg);
+  padding-block: 8px 24px;
+  padding-inline: 8px;
+  background: var(--color-cream);
+  box-shadow: var(--shadow-card);
+}
+
+.bl_firstApproach_card_imgWrap {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.bl_firstApproach_card_img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bl_firstApproach_card_body {
+  margin-top: 16px;
+}
+
+.bl_firstApproach_card_txt {
+  font-size: var(--font-base);
+  padding-inline: 8px;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.bl_firstApproach_card_txt+.bl_firstApproach_card_txt {
+  margin-block: 16px 0;
+}
+
+/* プラスアイコン */
+.bl_firstApproach_plus {
+  display: flex;
+  justify-content: center;
+  margin-block: 32px 0;
+}
+
+.bl_firstApproach_plus_icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* 技術の引き出し */
+.bl_firstApproach_technique {
+  margin-block: 32px 0;
+  text-align: center;
+}
+
+.bl_firstApproach_technique_ttl {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.bl_firstApproach_technique_ttl_em {
+  color: var(--color-primary);
+}
+
+.bl_firstApproach_technique_lead {
+  font-size: var(--font-sm);
+  color: var(--color-dark);
+  margin-block: 16px 0;
+  text-align: left;
+}
+
+.bl_firstApproach_technique_imgs {
+  overflow: hidden;
+  margin-block: 24px 0;
+}
+
+.bl_firstApproach_technique_track {
+  display: flex;
+  gap: var(--space-md);
+  width: max-content;
+  animation: infiniteScrollX 40s linear infinite;
+}
+
+.bl_firstApproach_technique_img {
+  width: 240px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+/* クロージングメッセージ */
+.bl_firstApproach_closing {
+  margin-block: 32px 0;
+  text-align: center;
+}
+
+.bl_firstApproach_closing_txt {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: left;
+}
+
+.bl_firstApproach_closing_cta {
+  display: block;
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 16px;
+}
+
+/* ========================================
+   代表紹介セクション (.ly_firstMessage)
+   ======================================== */
+.ly_firstMessage {
+  padding-block: 64px;
+  padding-inline: 16px;
+}
+
+.bl_firstMessage_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+.bl_firstMessage_content {
+  margin-block: 32px 0;
+}
+
+.bl_firstMessage_imgWrap {
+  position: relative;
+  background-color: #f5f5f5;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.bl_firstMessage_img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bl_firstMessage_nameCard {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: var(--color-gold);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  min-width: 290px;
+}
+
+.bl_firstMessage_nameCard_position {
+  font-size: var(--font-sm);
+  margin: 0;
+}
+
+.bl_firstMessage_nameCard_name {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+
+.bl_firstMessage_nameCard_ruby {
+  font-size: var(--font-sm);
+  font-weight: 400;
+}
+
+.bl_firstMessage_body {
+  margin-block: 32px 0;
+}
+
+.bl_firstMessage_txt {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  margin: 0;
+}
+
+/* ========================================
+   比較セクション (.ly_firstComparison)
+   ======================================== */
+.ly_firstComparison {
+  padding-block: 64px 64px;
+  padding-inline: 16px;
+  background-image: url('../../img/first/firstComparison-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bl_firstComparison_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+.bl_firstComparison_desc {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  margin-block: 24px 0;
+}
+
+/* ========================================
+   比較テーブル (.bl_compTable)
+   ======================================== */
+.bl_compTable_wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-block: 32px 0;
+  padding-block: 0 24px;
+}
+
+/* スクロールバーのカスタマイズ */
+.bl_compTable_wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.bl_compTable_wrap::-webkit-scrollbar-track {
+  background-color: var(--color-cream-dark);
+  border-radius: var(--radius-xs);
+}
+
+.bl_compTable_wrap::-webkit-scrollbar-thumb {
+  background-color: var(--color-gold);
+  border-radius: var(--radius-xs);
+}
+
+.bl_compTable {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 4px 4px 8px 0 rgba(35, 24, 21, 0.08);
+}
+
+/* ヘッダー */
+
+.bl_compTable_head {
+  padding: 16px 12px;
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: center;
+  vertical-align: middle;
+  background-color: var(--color-cream-dark);
+  border-right: 1px solid #FDDC9D;
+}
+
+.bl_compTable_head:last-child {
+  border-right: none;
+}
+
+.bl_compTable_head__highlight {
+  background-color: var(--color-primary);
+  font-size: var(--font-base);
+  color: #fff;
+  border-radius: 16px 0 0 0;
+}
+
+/* 行ラベル（左側） */
+.bl_compTable_rowLabel {
+  padding: 16px 12px;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: var(--color-gold);
+  border-bottom: 1px solid #FDDC9D;
+  white-space: nowrap;
+  width: 100px;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+thead .bl_compTable_rowLabel {
+  background-color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+tbody tr:first-child .bl_compTable_rowLabel {
+  border-radius: 16px 0 0 0;
+}
+
+/* セル */
+.bl_compTable_cell {
+  padding: 20px 16px;
+  text-align: center;
+  vertical-align: top;
+  background-color: #fff;
+  border-right: 1px solid #FDDC9D;
+  border-bottom: 1px solid #FDDC9D;
+  max-width: 270px;
+  height: 146px;
+}
+
+.bl_compTable_cell:last-child {
+  border-right: none;
+}
+
+.bl_compTable tbody tr:last-child .bl_compTable_cell,
+.bl_compTable tbody tr:last-child .bl_compTable_rowLabel {
+  border-bottom: none;
+}
+
+.bl_compTable tbody tr:last-child .bl_compTable_rowLabel {
+  border-radius: 0 0 0 16px;
+}
+
+/* ハイライトセル（心身堂グループ） */
+.bl_compTable_cell__highlight {
+  background-color: var(--color-cream);
+}
+
+.bl_compTable_cell__highlight .bl_compTable_ttl {
+  color: var(--color-primary);
+}
+
+.bl_compTable_cell__highlight .bl_compTable_desc {
+  color: var(--color-dark);
+}
+
+/* アイコン */
+.bl_compTable_icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* タイトル */
+.bl_compTable_ttl {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-block: 12px 0;
+}
+
+/* 説明文 */
+.bl_compTable_desc {
+  font-size: var(--font-sm);
+  color: var(--color-dark);
+  margin-block: 8px 0;
+}
+
+/* ========================================
+   それぞれの違いを詳しく解説 (.ly_firstExplanation)
+   ======================================== */
+.ly_firstExplanation {
+  padding-block: 64px 0;
+  padding-inline: 16px;
+  overflow: hidden;
+}
+
+.bl_firstExplanation_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+.bl_firstExplanation_list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  margin-block: 40px 0;
+}
+
+.bl_firstExplanation_card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  background-color: var(--color-cream);
+  box-shadow: var(--shadow-card);
+  padding-block: 8px 24px;
+  padding-inline: 8px;
+}
+
+.bl_firstExplanation_card_imgWrap {
+  width: 100%;
+  max-height: 600px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.bl_firstExplanation_card_img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bl_firstExplanation_card_body {
+  flex: 1;
+  padding-inline: 8px;
+}
+
+.bl_firstExplanation_card_ttl {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.bl_firstExplanation_card_desc {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  margin-block: 16px 0;
+}
+
+.bl_firstExplanation_card_label {
+  display: inline-block;
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: #fff;
+  background-color: var(--color-primary);
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  margin-block: 20px 0;
+}
+
+.bl_firstExplanation_card_list {
+  list-style: none;
+  padding: 0;
+  margin-block: 8px 0;
+  padding-block: 8px 0;
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.bl_firstExplanation_card_item {
+  position: relative;
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  padding-left: 20px;
+}
+
+.bl_firstExplanation_card_item::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+}
+
+.bl_firstExplanation_card_item+.bl_firstExplanation_card_item {
+  margin-block: 12px 0;
+}
+
+/* クロージング */
+.bl_firstExplanation_closing {
+  text-align: center;
+  margin-block: 60px 0;
+}
+
+.bl_firstExplanation_closing_ttl {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.bl_firstExplanation_closing_ttl_em {
+  color: var(--color-primary);
+}
+
+.bl_firstExplanation_closing_desc {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  text-align: left;
+  margin-block: 24px 0;
+}
+
+/* 無限スクロールテキスト */
+
+.bl_firstExplanation_scrollText_track {
+  display: flex;
+  gap: var(--space-xl);
+  width: max-content;
+  animation: scrollTextLoop 40s linear infinite;
+}
+
+.bl_firstExplanation_scrollText_txt {
+  font-size: var(--font-7xl);
+  font-weight: 700;
+  color: var(--color-cream);
+  white-space: nowrap;
+}
+
+@keyframes scrollTextLoop {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================================
+   心身堂グループの想い (.ly_firstThoughts)
+   ======================================== */
+.ly_firstThoughts {
+  padding-block: 60px 48px;
+  background-color: var(--color-cream);
+  border-radius: 48px 48px 0 0;
+  box-shadow: -16px 0 8px 0 rgba(35, 24, 21, 0.05);
+}
+
+.ly_firstThoughts .bl_sectionHeader {
+  padding-inline: var(--section-padding-inline);
+}
+
+.ly_firstThoughts .bl_firstThoughts_txtWrap {
+  padding-inline: var(--section-padding-inline);
+}
+
+.bl_firstThoughts_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+.bl_firstThoughts_content_inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-block: 32px 0;
+}
+
+/* 画像 */
+.bl_firstThoughts_imgWrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.bl_firstThoughts_img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* テキストエリア */
+.bl_firstThoughts_subttl {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  margin: 0;
+}
+
+.bl_firstThoughts_subttl_em {
+  display: block;
+  color: var(--color-primary);
+}
+
+.bl_firstThoughts_txt {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  margin-block: 24px 0;
+}
+
+/* ----------------------------------------
+   タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  /* イントロ - タブレット */
+  .bl_firstIntro {
+    padding-top: 80px;
+  }
+
+  .bl_firstIntro_greeting_txt {
+    text-align: center;
+  }
+
+  .bl_firstIntro_imgWrap {
+    margin-block: 40px 0;
+  }
+
+  .bl_firstIntro_img {
+    border-radius: var(--radius-2xl);
+  }
+
+  .bl_firstIntro_reason {
+    margin-block: 48px 0;
+  }
+
+  .bl_firstIntro_reason_ttl {
+    font-size: var(--font-4xl);
+    text-align: center;
+  }
+
+  .bl_firstIntro_reason_txt {
+    margin-block: 28px 0;
+    text-align: center;
+  }
+
+  /* SP専用画像を非表示 */
+  .bl_firstIntro_spImg {
+    display: none;
+  }
+
+  .bl_firstIntro_why {
+    margin-block: 0;
+    padding-block: 0;
+  }
+
+  .bl_firstIntro_why_txt {
+    text-align: center;
+  }
+
+  /* アプローチ - タブレット */
+  .bl_firstApproach {
+    padding-inline: 0;
+    padding-block: 80px;
+  }
+
+  .bl_firstApproach_ttl {
+    font-size: var(--font-5xl);
+    text-align: center;
+  }
+
+  .bl_firstApproach_lead {
+    font-size: var(--font-lg);
+    margin-block: 16px 0;
+    padding-inline: var(--section-padding-inline);
+    text-align: center;
+  }
+
+  .bl_firstApproach_cards {
+    flex-direction: row;
+    gap: var(--space-xl);
+    margin-block: 40px 0;
+    padding-inline: var(--section-padding-inline);
+  }
+
+  .bl_firstApproach_card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-2xl);
+  }
+
+  .bl_firstApproach_card_imgWrap_inner {
+    flex: 1;
+    margin-top: 8px;
+    border-radius: 24px;
+    padding-block: 24px 60px;
+    padding-inline: 24px;
+  }
+
+  .bl_firstApproach_card_label {
+    font-size: var(--font-3xl);
+    padding: 16px;
+  }
+
+
+  /* プラスアイコン - タブレット */
+  .bl_firstApproach_plus {
+    margin-block: 40px 0;
+  }
+
+  .bl_firstApproach_plus_icon {
+    width: 48px;
+    height: 48px;
+    margin-inline: auto;
+  }
+
+  /* 技術の引き出し - タブレット */
+  .bl_firstApproach_technique {
+    margin-block: 40px 0;
+  }
+
+  .bl_firstApproach_technique_ttl {
+    font-size: var(--font-2xl);
+  }
+
+  .bl_firstApproach_technique_lead {
+    font-size: var(--font-lg);
+    margin-block: 24px 0;
+    padding-inline: var(--section-padding-inline);
+    text-align: center;
+  }
+
+  .bl_firstApproach_technique_imgs {
+    margin-block: 32px 0;
+  }
+
+  .bl_firstApproach_technique_track {
+    gap: var(--space-20);
+  }
+
+  .bl_firstApproach_technique_img {
+    width: 280px;
+    border-radius: var(--radius-xl);
+  }
+
+  .bl_firstApproach_closing {
+    margin-block: 48px 0;
+  }
+
+  .bl_firstApproach_closing_txt {
+    font-size: var(--font-lg);
+    text-align: center;
+    padding-inline: var(--section-padding-inline);
+  }
+
+  .bl_firstApproach_closing_cta {
+    font-size: var(--font-xl);
+    margin-top: 24px;
+  }
+
+  /* 比較テーブル - タブレット */
+  .bl_compTable_wrap {
+    margin-block: 40px 0;
+  }
+
+  .bl_compTable {
+    border-radius: var(--radius-2xl);
+  }
+
+  .bl_compTable_head {
+    padding: 20px 16px;
+  }
+
+  .bl_compTable_head__highlight {
+    font-size: var(--font-lg);
+  }
+
+  .bl_compTable_rowLabel {
+    padding: 20px 16px;
+    font-size: var(--font-base);
+    width: 120px;
+  }
+
+  .bl_compTable_cell {
+    padding: 24px 20px;
+  }
+
+  .bl_compTable_ttl {
+    font-size: var(--font-base);
+    margin-block: 14px 0;
+  }
+
+  .bl_compTable_desc {
+    font-size: var(--font-base);
+    margin-block: 10px 0;
+  }
+
+  /* 代表紹介 - タブレット */
+  .ly_firstMessage {
+    padding-block: 80px 0;
+    padding-inline: var(--section-padding-inline);
+  }
+
+  .bl_firstMessage_content {
+    margin-block: 40px 0;
+  }
+
+  .bl_firstMessage_imgWrap {
+    border-radius: var(--radius-2xl);
+  }
+
+  .bl_firstMessage_nameCard {
+    padding: 16px 32px;
+    min-width: 320px;
+  }
+
+  .bl_firstMessage_body {
+    margin-block: 40px 0;
+  }
+
+  /* 比較セクション - タブレット */
+  .ly_firstComparison {
+    padding-block: 80px 64px;
+    padding-inline: var(--space-2xl);
+  }
+
+  .bl_firstComparison_desc {
+    margin-block: 28px 0;
+  }
+
+  /* 解説セクション - タブレット */
+  .ly_firstExplanation {
+    padding-block: 80px 0;
+    padding-inline: var(--space-2xl);
+  }
+
+  .bl_firstExplanation_card_body {
+    padding-inline: 8px 32px;
+  }
+
+  .bl_firstExplanation_list {
+    gap: var(--space-3xl);
+    margin-block: 48px 0;
+  }
+
+  .bl_firstExplanation_card_imgWrap {
+    border-radius: var(--radius-2xl);
+  }
+
+  .bl_firstExplanation_closing {
+    margin-block: 80px 0;
+  }
+
+  .bl_firstExplanation_closing_ttl {
+    font-size: var(--font-4xl);
+  }
+
+  .bl_firstExplanation_closing_desc {
+    margin-block: 28px 0;
+    text-align: center;
+  }
+
+  .bl_firstExplanation_scrollText_txt {
+    font-size: var(--font-8xl);
+  }
+
+  /* 想いセクション - タブレット */
+
+  .bl_firstThoughts_content_inner {
+    gap: var(--space-2xl);
+    margin-block: 40px 0;
+  }
+
+  .bl_firstThoughts_imgWrap {
+    border-radius: var(--radius-lg);
+  }
+
+  .bl_firstThoughts_subttl {
+    font-size: var(--font-2xl);
+  }
+
+  .bl_firstThoughts_txt {
+    margin-block: 28px 0;
+  }
+}
+
+/* ----------------------------------------
+   PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  /* イントロ - PC */
+  .bl_firstIntro_greeting_txt {
+    font-size: var(--font-lg);
+  }
+
+  .bl_firstIntro_imgWrap {
+    margin-block: 48px 0;
+    margin-inline: auto;
+  }
+
+  .bl_firstIntro_img {
+    border-radius: var(--radius-3xl);
+  }
+
+  .bl_firstIntro_reason {
+    margin-block: 60px 0;
+  }
+
+  .bl_firstIntro_reason_ttl {
+    font-size: var(--font-5xl);
+    text-align: center;
+  }
+
+  .bl_firstIntro_reason_txt {
+    font-size: var(--font-lg);
+    margin-block: 32px 0;
+  }
+
+  .bl_firstIntro_why {
+    margin-block: 16px 0;
+  }
+
+  .bl_firstIntro_why_txt {
+    font-size: var(--font-lg);
+  }
+
+  /* アプローチ - PC */
+  .bl_firstApproach_ttl {
+    font-size: var(--font-5xl);
+  }
+
+  .bl_firstApproach_lead {
+    margin-block: 28px 0;
+  }
+
+  .bl_firstApproach_cards {
+    gap: var(--space-2xl);
+    margin-block: 48px 0;
+  }
+
+  .bl_firstApproach_card {
+    border-radius: var(--radius-3xl);
+  }
+
+  .bl_firstApproach_card_txt {
+    font-size: var(--font-lg);
+  }
+
+  .bl_firstApproach_plus_icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .bl_firstApproach_technique {
+    margin-block: 48px 0;
+  }
+
+  .bl_firstApproach_technique_ttl {
+    font-size: var(--font-3xl);
+  }
+
+  .bl_firstApproach_technique_imgs {
+    margin-block: 40px 0;
+  }
+
+  .bl_firstApproach_technique_track {
+    gap: var(--space-lg);
+  }
+
+  .bl_firstApproach_technique_img {
+    width: 320px;
+    border-radius: var(--radius-2xl);
+  }
+
+  .bl_firstApproach_closing {
+    margin-block: 56px 0;
+  }
+
+  .bl_firstApproach_closing_txt {
+    font-weight: 700;
+  }
+
+  .bl_firstApproach_closing_cta {
+    font-size: var(--font-lg);
+    margin-top: 28px;
+  }
+
+  /* 比較テーブル - PC */
+  .bl_compTable_wrap {
+    margin-block: 32px 0;
+    overflow-x: visible;
+  }
+
+  .bl_compTable {
+    min-width: unset;
+  }
+
+  .bl_compTable_head {
+    padding: 24px 20px;
+    font-size: var(--font-lg);
+  }
+
+  .bl_compTable_head__highlight {
+    font-size: var(--font-xl);
+  }
+
+  .bl_compTable_rowLabel {
+    padding: 24px 20px;
+    width: 140px;
+  }
+
+  .bl_compTable_cell {
+    padding: 28px 24px;
+  }
+
+  .bl_compTable_icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .bl_compTable_ttl {
+    margin-block: 16px 0;
+  }
+
+  .bl_compTable_desc {
+    margin-block: 12px 0;
+  }
+
+  .bl_firstExplanation_card_body {
+    padding-inline: 8px 40px;
+  }
+
+  .bl_firstExplanation_card--reverse .bl_firstExplanation_card_body {
+    padding-inline: 40px 8px;
+  }
+
+  /* 代表紹介 - PC */
+  .ly_firstMessage {
+    padding-block: 100px 104px;
+  }
+
+  .bl_firstMessage_inner {
+    max-width: var(--max-width-content);
+    padding-inline: var(--section-padding-inline);
+  }
+
+  .bl_firstMessage_content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3xl);
+    margin-block: 48px 0;
+  }
+
+  .bl_firstMessage_imgWrap {
+    flex-shrink: 0;
+    width: 50%;
+    max-width: 588px;
+    border-radius: var(--radius-3xl);
+  }
+
+  .bl_firstMessage_nameCard {
+    bottom: 16px;
+    left: 16px;
+    transform: none;
+    border-radius: var(--radius-xl);
+    padding: 16px 24px;
+    min-width: 340px;
+  }
+
+  .bl_firstMessage_nameCard_name {
+    font-size: var(--font-2xl);
+    margin-block: 8px 0;
+  }
+
+  .bl_firstMessage_body {
+    flex: 1;
+    margin-block: 0;
+  }
+
+  .bl_firstMessage_txt {
+    font-size: var(--font-lg);
+  }
+
+  /* 比較セクション - PC */
+  .ly_firstComparison {
+    padding-block: 100px 120px;
+    padding-inline: var(--space-2xl);
+  }
+
+  .bl_firstComparison_inner {
+    max-width: var(--max-width-content);
+    padding-inline: var(--section-padding-inline);
+  }
+
+  .bl_firstComparison_desc {
+    font-size: var(--font-lg);
+    margin-block: 24px 0;
+  }
+
+  /* 解説セクション - PC */
+  .ly_firstExplanation {
+    padding-block: 100px 0;
+    padding-inline: var(--space-2xl);
+  }
+
+  .bl_firstExplanation_inner {
+    max-width: var(--max-width-content);
+    padding-inline: var(--section-padding-inline);
+  }
+
+  .bl_firstExplanation_list {
+    gap: var(--section-padding-block);
+    margin-block: 56px 0;
+  }
+
+  .bl_firstExplanation_card {
+    flex-direction: row;
+    gap: var(--space-3xl);
+    align-items: center;
+    padding-block: 26px;
+    padding-inline: 26px;
+  }
+
+  .bl_firstExplanation_card--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .bl_firstExplanation_card_imgWrap {
+    width: 45%;
+    flex-shrink: 0;
+    border-radius: var(--radius-3xl);
+  }
+
+  .bl_firstExplanation_card_ttl {
+    font-size: var(--font-3xl);
+  }
+
+  .bl_firstExplanation_card_desc {
+    margin-block: 8px 0;
+    font-size: var(--font-lg);
+  }
+
+  .bl_firstExplanation_card_label {
+    margin-block: 16px 0;
+    font-size: var(--font-xl);
+  }
+
+  .bl_firstExplanation_card_item {
+    font-size: var(--font-lg);
+  }
+
+  .bl_firstExplanation_card_item+.bl_firstExplanation_card_item {
+    margin-block: 16px 0;
+  }
+
+  .bl_firstExplanation_closing {
+    margin-block: 100px 0;
+  }
+
+  .bl_firstExplanation_closing_ttl {
+    font-size: var(--font-5xl);
+  }
+
+  .bl_firstExplanation_closing_desc {
+    font-size: var(--font-lg);
+    margin-block: 24px 0;
+  }
+
+  .bl_firstExplanation_scrollText_txt {
+    font-size: var(--font-9xl);
+  }
+
+  /* 想いセクション - PC */
+  .ly_firstThoughts {
+    padding-block: 100px 60px;
+  }
+
+  .ly_firstThoughts .bl_sectionHeader {
+    padding-inline: 40px;
+  }
+
+  .bl_firstThoughts_inner {
+    margin-inline: unset;
+    max-width: unset;
+  }
+
+  .bl_firstThoughts_content_inner {
+    flex-direction: row;
+    gap: 0;
+    align-items: stretch;
+    margin-block: 48px 0;
+  }
+
+  .bl_firstThoughts_imgWrap {
+    width: 50%;
+    flex-shrink: 0;
+    border-radius: 0 48px 48px 0;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .bl_firstThoughts_txtWrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: var(--font-lg);
+  }
+
+  .bl_firstThoughts_subttl {
+    font-size: var(--font-3xl);
+  }
+
+  .bl_firstThoughts_txt {
+    margin-block: 24px 0;
+    font-size: var(--font-lg);
+  }
+}

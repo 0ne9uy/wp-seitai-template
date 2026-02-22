@@ -209,7 +209,7 @@
   display: flex;
   gap: var(--slide-gap);
   width: max-content;
-  animation: customerVoiceScroll 40s linear infinite;
+  animation: infiniteScrollX 40s linear infinite;
 }
 
 .bl_customerVoice_slide {
@@ -236,16 +236,6 @@
   border-radius: var(--radius-lg);
   font-size: var(--font-sm);
   color: var(--color-gray);
-}
-
-@keyframes customerVoiceScroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 /* ========================================

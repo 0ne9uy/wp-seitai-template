@@ -143,6 +143,19 @@
 }
 
 /* ================================================
+   共通アニメーション（@keyframes）
+================================================ */
+/* 水平無限スクロール（左方向） */
+@keyframes infiniteScrollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================================================
  リセットの記述
 ================================================ */
 *,
@@ -2321,7 +2334,7 @@ body.is_menuOpen {
   display: flex;
   gap: var(--space-md);
   width: max-content;
-  animation: ctaSliderScroll 40s linear infinite;
+  animation: infiniteScrollX 40s linear infinite;
 }
 
 .bl_cta_slide {
@@ -2334,16 +2347,6 @@ body.is_menuOpen {
   height: 120px;
   border-radius: 8px;
   object-fit: cover;
-}
-
-@keyframes ctaSliderScroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 /* --- Vertical Scroll (PC/Tablet) --- */

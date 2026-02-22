@@ -1,0 +1,137 @@
+/**
+ * File: featured.css
+ * Usage: メディア掲載セクション共通スタイル
+ * 使用ページ: front-page, single-symptoms, single-shop
+ * ※ single-symptoms.css から抽出
+ */
+
+/* ========================================
+   メディア掲載
+   ※ CSS変数は base.css で一元管理
+   ======================================== */
+.ly_featured {
+  position: relative;
+  padding: var(--section-padding-block) var(--section-padding-inline)
+    var(--section-padding-bottom);
+  background-color: var(--color-primary-dark);
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+}
+
+.bl_featured_bg {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bl_featured_bgTrack {
+  display: flex;
+  gap: var(--space-2xl);
+  width: max-content;
+  animation: infiniteScrollX 40s linear infinite;
+}
+
+.bl_featured_bgText {
+  flex-shrink: 0;
+  font-size: var(--font-6xl);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.15);
+  white-space: nowrap;
+}
+
+.bl_featured_inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.bl_featured_ttl {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.bl_featured_desc {
+  font-size: var(--font-base);
+  font-weight: 500;
+  color: #fff;
+  text-align: left;
+}
+
+.bl_featured_imgWrap {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.bl_featured_img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+/* ----------------------------------------
+   タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .ly_featured {
+    padding: var(--section-padding-block) var(--section-padding-inline)
+      var(--section-padding-bottom);
+    border-radius: 48px;
+  }
+
+  .bl_featured_bgText {
+    font-size: var(--font-7xl);
+  }
+
+  .bl_featured_ttl {
+    font-size: var(--font-4xl);
+    margin-bottom: 16px;
+  }
+
+  .bl_featured_desc {
+    font-size: var(--font-base);
+    text-align: center;
+  }
+
+  .bl_featured_imgWrap {
+    margin-top: 20px;
+  }
+
+  .bl_featured_img {
+    max-width: 700px;
+  }
+}
+
+/* ----------------------------------------
+   PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .ly_featured {
+    padding: var(--section-padding-block) var(--section-padding-inline)
+      var(--section-padding-bottom);
+  }
+
+  .bl_featured_bgText {
+    font-size: 100px;
+  }
+
+  .bl_featured_ttl {
+    font-size: var(--font-5xl);
+  }
+
+  .bl_featured_desc {
+    font-size: var(--font-lg);
+  }
+
+  .bl_featured_img {
+    max-width: 900px;
+  }
+}
