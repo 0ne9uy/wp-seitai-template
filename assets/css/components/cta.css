@@ -1,0 +1,399 @@
+/**
+ * Component: cta.css
+ * Usage: CTAセクション共通コンポーネント
+ * Source: base.css から分割
+ *
+ * 構成:
+ * - .ly_cta: レイアウトコンテナ
+ * - .bl_cta: CTAブロック
+ * - .bl_cta_main: メインコンテナ
+ * - .bl_cta_header: ヘッダー
+ * - .bl_cta_price: 価格表示エリア
+ * - .bl_cta_action: アクションボタンエリア
+ * - .bl_cta_slider: 横スクロールスライダー（SP）
+ * - .bl_cta_vscroll: 縦スクロール（PC/Tablet）
+ */
+
+/* ================================================
+   CTAセクション（モバイルファースト）
+   ================================================ */
+
+/* --- Layout --- */
+.ly_cta {
+  padding: var(--space-3xl) var(--space-xs);
+  background: var(--color-yellow);
+  overflow: hidden;
+}
+
+.bl_cta {
+  padding-bottom: 24px;
+}
+
+.bl_cta_main {
+  position: relative;
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+  background-color: #fffaf2;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* --- Header --- */
+.bl_cta_header {
+  position: relative;
+  z-index: 10;
+  padding: var(--space-sm) 6px;
+  background-image: url('../img/cta/cta-header.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  text-align: center;
+}
+
+.bl_cta_header_label {
+  display: inline-block;
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: #fff;
+}
+
+/* --- Inner Container --- */
+.bl_cta_inner {
+  position: relative;
+  z-index: 10;
+  padding-top: 24px;
+}
+
+/* --- Price Area --- */
+.bl_cta_price {
+  text-align: center;
+}
+
+.bl_cta_price_original {
+  font-size: var(--font-2xl);
+  font-weight: 500;
+  color: #231815;
+}
+
+.bl_cta_price_original .lato {
+  font-size: var(--font-3xl);
+  font-weight: 700;
+}
+
+.bl_cta_price_original_strike {
+  position: relative;
+  display: inline-block;
+}
+
+.bl_cta_price_original_strike::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #231815;
+}
+
+.bl_cta_price_tax {
+  font-size: var(--font-xl);
+}
+
+.bl_cta_price_row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.bl_cta_price_limit {
+  display: block;
+}
+
+.bl_cta_price_limit img {
+  min-height: 60px;
+  width: auto;
+  margin-inline: auto;
+}
+
+.bl_cta_price_sale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  margin-top: 10px;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(180deg, #f33500 0%, #f39800 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bl_cta_price_sale_num {
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.bl_cta_price_sale_sub {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.bl_cta_price_sale_unit {
+  font-size: var(--font-5xl);
+  font-weight: 700;
+  line-height: 1;
+  color: #231815;
+}
+
+.bl_cta_price_sale_tax {
+  font-size: var(--font-base);
+  color: #231815;
+}
+
+.bl_cta_price_note {
+  color: #231815;
+}
+
+/* --- Action Button Area --- */
+.bl_cta_action {
+  margin-top: 10px;
+  padding-inline: 16px;
+  text-align: center;
+}
+
+.bl_cta_action_limit {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 2px var(--space-sm);
+  border-radius: 4px;
+  background: var(--color-yellow);
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: #231815;
+  z-index: 10;
+}
+
+.bl_cta_action_limit::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--color-yellow);
+}
+
+.bl_cta_action_limit_num {
+  font-size: var(--font-2xl);
+  color: var(--color-accent-red);
+}
+
+.bl_cta_action_btn {
+  display: block;
+  width: 100%;
+  max-width: 1208px;
+  margin-inline: auto;
+  padding: var(--space-20) var(--space-xl);
+  border-radius: 60px;
+  background: linear-gradient(180deg, #8fc31f 0%, #5ba21c 100%);
+  box-shadow: 0 4px 12px rgba(91, 162, 28, 0.4);
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.bl_cta_action_btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* --- Horizontal Slider (SP) --- */
+.bl_cta_slider {
+  position: relative;
+  margin-top: var(--space-lg);
+  overflow: hidden;
+}
+
+.bl_cta_slider_track {
+  display: flex;
+  gap: var(--space-md);
+  width: max-content;
+  animation: infiniteScrollX 40s linear infinite;
+}
+
+.bl_cta_slide {
+  flex-shrink: 0;
+}
+
+.bl_cta_slide img {
+  display: block;
+  width: auto;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* --- Vertical Scroll (PC/Tablet) --- */
+.bl_cta_vscroll {
+  display: none;
+}
+
+/* ================================================
+   Tablet (768px〜)
+   ================================================ */
+@media screen and (min-width: 768px) {
+  .bl_cta {
+    padding-bottom: unset;
+  }
+
+  .bl_cta_main {
+    overflow: hidden;
+  }
+
+  /* Vertical Scroll */
+  .bl_cta_vscroll {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: block;
+    width: 160px;
+    overflow: hidden;
+  }
+
+  .bl_cta_vscroll__left {
+    left: 80px;
+  }
+
+  .bl_cta_vscroll__right {
+    right: 80px;
+  }
+
+  .bl_cta_vscroll_track {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    animation: infiniteScrollY 20s linear infinite;
+  }
+
+  .bl_cta_vscroll__right .bl_cta_vscroll_track {
+    animation-direction: reverse;
+  }
+
+  .bl_cta_vscroll_item {
+    flex-shrink: 0;
+  }
+
+  .bl_cta_vscroll_item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  /* Price Row */
+  .bl_cta_price_row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .bl_cta_price_limit img {
+    max-width: 240px;
+  }
+
+  /* Action */
+  .bl_cta_action {
+    padding-bottom: 40px;
+    margin-top: 40px;
+  }
+
+  .bl_cta_action_limit {
+    font-size: var(--font-lg);
+  }
+
+  .bl_cta_action_btn {
+    padding: var(--space-20) var(--space-2xl);
+    font-size: var(--font-5xl);
+  }
+}
+
+/* ================================================
+   PC (1024px〜)
+   ================================================ */
+@media screen and (min-width: 1024px) {
+
+  /* Vertical Scroll */
+  .bl_cta_vscroll {
+    width: 200px;
+  }
+
+  .bl_cta_vscroll_track {
+    gap: var(--space-20);
+  }
+
+  .bl_cta_vscroll_item img {
+    border-radius: 16px;
+  }
+
+  /* Header */
+  .bl_cta_header_label {
+    font-size: var(--font-4xl);
+  }
+
+  /* Price */
+  .bl_cta_price_original,
+  .bl_cta_price_original .lato {
+    font-size: var(--font-5xl);
+  }
+
+  .bl_cta_price_tax,
+  .bl_cta_price_sale_tax {
+    font-size: var(--font-2xl);
+  }
+
+  .bl_cta_price_sale_num {
+    font-size: 150px;
+  }
+
+  .bl_cta_price_sale_sub {
+    align-items: center;
+  }
+
+  .bl_cta_price_sale_unit {
+    font-size: 72px;
+  }
+
+  .bl_cta_price_note {
+    font-size: var(--font-2xl);
+  }
+
+  /* Action */
+  .bl_cta_action {
+    position: relative;
+  }
+
+  .bl_cta_action_limit {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bl_cta_action_btn {
+    padding: var(--space-2xl);
+  }
+}
