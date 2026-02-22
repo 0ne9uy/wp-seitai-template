@@ -28,6 +28,8 @@ function enqueue_my_styles()
     wp_enqueue_style('content-grid-css', $uri . '/assets/css/components/content-grid.css');
     wp_enqueue_style('floating-buttons-css', $uri . '/assets/css/components/floating-buttons.css');
     wp_enqueue_style('panel-modal-css', $uri . '/assets/css/components/panel-modal.css');
+    wp_enqueue_style('mobile-nav-css', $uri . '/assets/css/components/mobile-nav.css');
+    wp_enqueue_style('header-css', $uri . '/assets/css/components/header.css');
 
     // ========================================
     // コンポーネントCSS
