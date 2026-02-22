@@ -48,7 +48,8 @@
   aspect-ratio: 16 / 9;
 }
 
-.bl_voiceCard_thumbImg {
+.bl_voiceCard_thumbImg,
+.bl_voiceCard_thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;

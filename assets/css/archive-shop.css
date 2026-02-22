@@ -1,0 +1,142 @@
+/**
+ * Archive CSS: 店舗一覧
+ *
+ * @package noras theme
+ * @author shirako
+ * @link https://norasinc.jp
+ */
+
+/* ========================================
+   店舗一覧アーカイブページ
+   ======================================== */
+
+.ly_archiveShop {
+  padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-bottom);
+  background-color: var(--color-white);
+}
+
+.bl_archiveShop_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+
+}
+
+.ly_archiveShop .bl_shopList_tabs {
+  display: flex;
+}
+
+.bl_shopList_tab {
+  width: 100%;
+  background-color: var(--color-cream-dark);
+}
+
+.ly_archiveShop .bl_shopList_panelWrap {
+  background-color: var(--color-gold);
+  padding-inline: 16px;
+  padding-block: 20px 48px;
+  border-radius: 0 0 16px 16px;
+}
+
+.ly_archiveShop .bl_shopCard_body {
+  background-color: var(--color-cream);
+}
+
+.ly_archiveShop .bl_shopCard_actions {
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.bl_shopCard_btns {
+  max-width: unset;
+}
+
+.bl_shopCard_address {
+  margin-bottom: 16px;
+}
+
+.bl_shopCard_webBtnWrap {
+  border-top: 1px solid var(--color-cream-dark);
+  border-bottom: 1px solid var(--color-cream-dark);
+  padding-block: 12px;
+}
+
+.ly_archiveShop .bl_shopCard_btn--web {
+  background: var(--color-gold);
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+/* 電話で予約リンク */
+.bl_shopCard_phoneLink {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  padding: var(--space-sm);
+  text-decoration: none;
+  transition: opacity var(--transition-base);
+}
+
+.bl_shopCard_phoneLink:hover {
+  opacity: 0.7;
+}
+
+.bl_shopCard_phoneLink_label {
+  font-size: clamp(12px, calc(10px + 0.75vw), 22px);
+  font-weight: 600;
+  color: var(--color-dark);
+  white-space: nowrap;
+}
+
+.bl_shopCard_phoneLink_icon {
+  flex-shrink: 0;
+  filter: brightness(0) saturate(100%) invert(73%) sepia(68%) saturate(583%) hue-rotate(351deg) brightness(101%) contrast(94%);
+}
+
+.bl_shopCard_phoneLink_number {
+  font-size: clamp(16px, calc(12px + 1.5vw), 32px);
+  font-weight: 700;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+/* ========================================
+   タブレット (768px以上)
+   ======================================== */
+
+@media screen and (min-width: 768px) {
+  .ly_archiveShop {
+    padding-inline: var(--space-2xl);
+  }
+
+  .bl_archiveShop_inner {
+    padding-inline: 20px;
+  }
+
+  .ly_archiveShop .bl_shopList_panelWrap {
+    padding-inline: 20px;
+    padding-block: 48px 80px;
+    border-radius: 0 0 40px 40px;
+  }
+}
+
+/* ========================================
+   PC (1024px以上)
+   ======================================== */
+
+@media screen and (min-width: 1024px) {
+  .bl_archiveShop_inner {
+    padding-inline: 40px;
+  }
+
+  .ly_archiveShop {
+    padding-block: var(--section-padding-block) var(--section-padding-bottom);
+    padding-inline: var(--space-3xl);
+  }
+
+  .bl_shopCard_phoneLink_icon {
+    width: 36px;
+    height: 36px;
+  }
+}

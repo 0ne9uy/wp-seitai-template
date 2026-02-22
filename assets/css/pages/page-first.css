@@ -665,7 +665,7 @@ tbody tr:first-child .bl_compTable_rowLabel {
   display: flex;
   gap: var(--space-xl);
   width: max-content;
-  animation: scrollTextLoop 40s linear infinite;
+  animation: infiniteScrollX 40s linear infinite;
 }
 
 .bl_firstExplanation_scrollText_txt {
@@ -673,16 +673,6 @@ tbody tr:first-child .bl_compTable_rowLabel {
   font-weight: 700;
   color: var(--color-cream);
   white-space: nowrap;
-}
-
-@keyframes scrollTextLoop {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 /* ========================================

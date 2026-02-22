@@ -1,0 +1,551 @@
+/**
+ * File: voice-list.css
+ * Usage: お客様の声スライダーセクションスタイル
+ * 使用ページ: front-page
+ * ※ single-symptoms.cssと同じスタイル
+ */
+
+/* ========================================
+   お客様の声スライダー（一覧）
+   ======================================== */
+.ly_voiceList {
+  background-color: var(--color-gold);
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  padding-block: var(--space-5xl);
+  margin-top: var(--space-5xl);
+}
+
+.bl_voiceList_header {
+  padding-inline: var(--section-padding-inline);
+}
+
+/*
+ * Note: 白文字スタイルは bl_sectionHeader--light で管理
+ * parts/elements/section-header.php の is_light オプションを使用
+ */
+
+.bl_voiceList_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+  padding: 0 16px;
+}
+
+.bl_voiceList_sliderWrap {
+  position: relative;
+  margin-inline: auto;
+}
+
+.bl_voiceList_btn {
+  position: absolute;
+  top: 32%;
+  z-index: 10;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.bl_voiceList_btn__prev {
+  left: -10px;
+}
+
+.bl_voiceList_btn__next {
+  right: -10px;
+}
+
+.ly_voiceList .bl_voiceListSwiper {
+  overflow: visible;
+}
+
+.bl_voiceList_slide {
+  width: 330px;
+  max-width: 375px;
+  height: auto;
+}
+
+/* ========================================
+   お客様の声カード - コンテキストオーバーライド
+   基本スタイルは components/voice-card.css を参照
+   ======================================== */
+
+/* コンマアイコン（スライダー版固有） */
+.ly_voiceList .bl_voiceCard_info {
+  position: relative;
+}
+
+.ly_voiceList .bl_voiceCard_info::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 56px;
+  background: url('../img/icons/comma.svg') no-repeat center / contain;
+  position: absolute;
+  top: 6px;
+  right: 0;
+  transform: translateY(-40%);
+  z-index: 0;
+}
+
+/* タイトル - フォントファミリー追加 */
+.ly_voiceList .bl_voiceCard_ttl {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  position: inherit;
+  z-index: 10;
+}
+
+/* 名前 - 右寄せ */
+.ly_voiceList .bl_voiceCard_name {
+  text-align: right;
+}
+
+/* メタ情報 - スライダー用スタイル */
+.ly_voiceList .bl_voiceCard_meta {
+  margin-top: 8px;
+  padding: 0;
+}
+
+.ly_voiceList .bl_voiceCard_metaRow {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-cream-dark);
+}
+
+.ly_voiceList .bl_voiceCard_metaRow:first-child {
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.ly_voiceList .bl_voiceCard_metaRow dt {
+  width: 90px;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.ly_voiceList .bl_voiceCard_metaRow dd {
+  margin: 0;
+  color: var(--color-dark);
+}
+
+/* ボタン - スライダー用スタイル */
+.ly_voiceList .bl_voiceCard_btn {
+  margin-top: 20px;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 240px;
+  height: 44px;
+  background-color: var(--color-primary-dark);
+  box-shadow: 2px 4px 8px 2px #23181526;
+}
+
+/* ボタンラップ */
+.bl_voiceList_btnWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  padding-inline: var(--section-padding-inline);
+}
+
+.bl_voiceList_btnWrap .el_greenBtn {
+  justify-content: center;
+  max-width: 320px;
+  width: 100%;
+  position: relative;
+}
+
+.bl_voiceList_btnWrap .el_greenBtn img {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ----------------------------------------
+   タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .bl_voiceList_btn {
+    top: 50%;
+  }
+
+  .bl_voiceList_btn__prev {
+    left: -14px;
+  }
+
+  .bl_voiceList_btn__next {
+    right: -14px;
+  }
+
+  /* カード - タブレット用オーバーライド */
+  .ly_voiceList .bl_voiceCard_metaRow {
+    padding-block: var(--space-sm);
+  }
+
+  .ly_voiceList .bl_voiceCard_metaRow dt {
+    font-size: var(--font-base);
+    width: 120px;
+  }
+
+  .ly_voiceList .bl_voiceCard_metaRow dd {
+    font-size: var(--font-base);
+  }
+
+  .ly_voiceList .bl_voiceCard_btn {
+    margin-top: 24px;
+    font-size: var(--font-base);
+    height: 60px;
+  }
+
+  .bl_voiceList_btnWrap {
+    margin-top: 40px;
+  }
+}
+
+/* ----------------------------------------
+   PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .ly_voiceList {
+    border-radius: 48px 48px 0 0;
+    padding-block: var(--space-6xl) 120px;
+    margin-top: 140px;
+  }
+
+  .bl_voiceList_header {
+    padding-inline: 40px;
+    margin-bottom: 30px;
+  }
+
+  .bl_voiceList_btnWrap {
+    padding-inline: 0;
+    margin-top: 48px;
+  }
+
+  .bl_voiceList_inner {
+    padding: 0;
+  }
+
+  .bl_voiceList_desc {
+    font-size: var(--font-base);
+    text-align: right;
+  }
+
+  /* カード - PC用オーバーライド */
+  .ly_voiceList .bl_voiceCard_btn {
+    margin-top: 28px;
+    font-size: var(--font-lg);
+  }
+
+  .ly_voiceList .bl_voiceCard_metaRow dt,
+  .ly_voiceList .bl_voiceCard_metaRow dd {
+    font-size: var(--font-lg);
+  }
+}
+
+/* ========================================
+   お客様の声モーダル (.bl_voiceModal)
+   ======================================== */
+.bl_voiceModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+}
+
+.bl_voiceModal.is_active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bl_voiceModal_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bl_voiceModal_container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  background-color: var(--color-cream);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.bl_voiceModal_inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  margin-top: 40px;
+  padding: var(--space-md);
+  overflow-y: auto;
+}
+
+.bl_voiceModal_close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  cursor: pointer;
+  transition: opacity 0.3s;
+  color: #fff;
+}
+
+.bl_voiceModal_close img {
+  filter: brightness(0) invert(1);
+}
+
+.bl_voiceModal_close:hover {
+  opacity: 0.8;
+}
+
+/* ヘッダー部分（サムネイル + 情報） */
+.bl_voiceModal_header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+.bl_voiceModal_thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.bl_voiceModal_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bl_voiceModal_info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-right: 50px;
+}
+
+.bl_voiceModal_info::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: url('../img/icons/comma.svg') no-repeat center / contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bl_voiceModal_ttl {
+  position: relative;
+  z-index: 10;
+  font-size: var(--font-lg);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.bl_voiceModal_name {
+  margin-top: 12px;
+  font-size: var(--font-sm);
+  color: var(--color-dark);
+}
+
+.bl_voiceModal_meta {
+  margin-top: 24px;
+  padding: 0;
+}
+
+.bl_voiceModal_metaRow {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-cream-dark);
+}
+
+.bl_voiceModal_metaRow:first-child {
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.bl_voiceModal_metaRow dt {
+  width: 80px;
+  flex-shrink: 0;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.bl_voiceModal_metaRow dd {
+  margin: 0;
+  font-size: var(--font-sm);
+  color: var(--color-dark);
+}
+
+/* 本文部分 */
+.bl_voiceModal_body {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-cream-dark);
+  font-size: var(--font-base);
+  color: var(--color-dark);
+  line-height: 1.8;
+}
+
+.bl_voiceModal_body p {
+  margin-top: var(--space-md);
+}
+
+.bl_voiceModal_body p:first-child {
+  margin-top: 0;
+}
+
+.bl_voiceModal_note {
+  margin-top: 16px;
+  font-size: var(--font-xs);
+  color: var(--color-gray);
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------
+   モーダル タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .bl_voiceModal_inner {
+    padding: 24px;
+  }
+
+  .bl_voiceModal_close {
+    top: 16px;
+    right: 16px;
+  }
+
+  .bl_voiceModal_ttl {
+    font-size: var(--font-xl);
+  }
+
+  .bl_voiceModal_name {
+    font-size: var(--font-base);
+  }
+
+  .bl_voiceModal_metaRow dt {
+    font-size: var(--font-base);
+  }
+
+  .bl_voiceModal_metaRow dd {
+    font-size: var(--font-base);
+  }
+
+  .bl_voiceModal_body {
+    font-size: var(--font-lg);
+  }
+
+  .bl_voiceModal_note {
+    font-size: var(--font-sm);
+  }
+}
+
+/* ----------------------------------------
+   モーダル PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .bl_voiceModal_inner {
+    padding: 24px 24px 32px;
+  }
+
+  .bl_voiceModal_close {
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .bl_voiceModal_close svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ヘッダー横並び */
+  .bl_voiceModal_header {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-xl);
+  }
+
+  .bl_voiceModal_thumb {
+    max-width: 480px;
+    min-height: 260px;
+    aspect-ratio: 147 / 80;
+    flex-shrink: 0;
+  }
+
+  .bl_voiceModal_info {
+    flex: 1;
+    padding-top: 16px;
+    padding-right: 70px;
+  }
+
+  .bl_voiceModal_info::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 56px;
+    height: 56px;
+    background: url('../img/icons/comma.svg') no-repeat center / contain;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .bl_voiceModal_ttl {
+    font-size: var(--font-2xl);
+  }
+
+  .bl_voiceModal_meta {
+    margin-top: 32px;
+  }
+
+  .bl_voiceModal_metaRow dt {
+    width: 100px;
+    font-size: var(--font-lg);
+  }
+
+  .bl_voiceModal_metaRow dd {
+    font-size: var(--font-lg);
+  }
+
+  /* 本文 */
+  .bl_voiceModal_body {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+  }
+
+  .bl_voiceModal_note {
+    margin-top: 24px;
+  }
+}

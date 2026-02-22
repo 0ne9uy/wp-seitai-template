@@ -590,7 +590,7 @@
   display: flex;
   gap: var(--space-2xl);
   width: max-content;
-  animation: menuGuideScroll 40s linear infinite;
+  animation: infiniteScrollX 40s linear infinite;
 }
 
 .bl_menuGuide_bgText {
@@ -599,16 +599,6 @@
   font-weight: 700;
   color: var(--color-cream);
   white-space: nowrap;
-}
-
-@keyframes menuGuideScroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 /* インナー */

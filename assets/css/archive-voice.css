@@ -1,7 +1,435 @@
 /**
- * File: archive-voice.css
- * Usage: archive-voice.php（お客様の声一覧ページ）のスタイルを定義します。
- * Note: 共通カードスタイル（.bl_content, .bl_column）はbase.cssで定義
-*/
+ * archive-voice.css
+ * お客様の声一覧ページのスタイル
+ */
 
-/* お客様の声固有のスタイルがある場合はここに追加 */
+/* ===========================================
+   レイアウト
+=========================================== */
+.ly_cont.ly_voice {
+  background-color: #fff;
+  padding-inline: 6px;
+  padding-block: 40px 80px;
+}
+
+.bl_voiceCont {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+/* ===========================================
+   タブ型フィルター
+=========================================== */
+.bl_voiceFilter {
+  margin-bottom: 40px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.bl_voiceFilter_tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+
+.bl_voiceFilter_tab {
+  padding: 16px 20px;
+  border-radius: 16px 16px 0 0;
+  font-size: var(--font-base);
+  font-weight: 700;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  color: var(--color-dark);
+  background-color: var(--color-cream);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.bl_voiceFilter_tab.is_active {
+  background-color: var(--color-gold);
+  color: #fff;
+}
+
+.bl_voiceFilter_dropdown {
+  padding: 24px 16px;
+  background-color: var(--color-gold);
+  border-radius: 0 0 16px 16px;
+}
+
+/* ===========================================
+   ドロップダウンセレクト
+=========================================== */
+.bl_voiceFilter_select {
+  display: none;
+  position: relative;
+}
+
+.bl_voiceFilter_select.is_active {
+  display: block;
+}
+
+.bl_voiceFilter_selectBtn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #fff;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.bl_voiceFilter_selectBtn:hover {
+  box-shadow: 0 2px 8px rgba(35, 24, 21, 0.1);
+}
+
+.bl_voiceFilter_selectText {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.bl_voiceFilter_selectIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.bl_voiceFilter_select.is_open .bl_voiceFilter_selectIcon {
+  transform: rotate(180deg);
+}
+
+/* ドロップダウンリスト */
+.bl_voiceFilter_selectList {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  background-color: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 16px rgba(35, 24, 21, 0.15);
+  z-index: 100;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.bl_voiceFilter_select.is_open .bl_voiceFilter_selectList {
+  display: block;
+}
+
+.bl_voiceFilter_selectList li {
+  margin: 0;
+}
+
+.bl_voiceFilter_selectList a {
+  display: block;
+  padding: 12px 20px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.bl_voiceFilter_selectList a:hover {
+  background-color: var(--color-cream);
+}
+
+/* 階層表示：親カテゴリー */
+.bl_voiceFilter_selectCategory {
+  margin: 0;
+  padding: 0;
+}
+
+.bl_voiceFilter_selectCategoryName {
+  display: block;
+  padding: 12px 20px 8px;
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-gold);
+  background-color: var(--color-cream);
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.bl_voiceFilter_selectCategory:first-of-type .bl_voiceFilter_selectCategoryName {
+  border-top: none;
+}
+
+/* 階層表示：子要素 */
+.bl_voiceFilter_selectChildren {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bl_voiceFilter_selectChildren li {
+  margin: 0;
+}
+
+.bl_voiceFilter_selectChildren a {
+  padding-left: 32px;
+}
+
+/* ===========================================
+   カテゴリータイトル（FAQ風）
+=========================================== */
+.bl_voiceGroup_header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: 24px;
+}
+
+.bl_voiceGroup_circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.bl_voiceGroup_ttl {
+  color: var(--color-gold);
+  font-size: var(--font-lg);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 700;
+}
+
+/* ===========================================
+   カードリスト
+=========================================== */
+.bl_voiceList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+.bl_voiceList_empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--color-gray);
+}
+
+/* ===========================================
+   カード - コンテキストオーバーライド
+   基本スタイルは components/voice-card.css を参照
+=========================================== */
+
+/* ヘッダー（サムネイル + 情報のラッパー） */
+.bl_voiceCard_header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+/* タイトル - フォントファミリー追加 */
+.bl_voiceCard--list .bl_voiceCard_ttl {
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+/* 名前 */
+.bl_voiceCard--list .bl_voiceCard_name {
+  margin-top: 12px;
+}
+
+/* メタ情報 - 一覧用スタイル */
+.bl_voiceCard--list .bl_voiceCard_meta {
+  margin-top: 40px;
+  padding: 0;
+}
+
+.bl_voiceCard--list .bl_voiceCard_metaRow {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-cream-dark);
+}
+
+.bl_voiceCard--list .bl_voiceCard_metaRow:first-child {
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.bl_voiceCard--list .bl_voiceCard_metaRow dt {
+  width: 80px;
+  flex-shrink: 0;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.bl_voiceCard--list .bl_voiceCard_metaRow dd {
+  margin: 0;
+  font-size: var(--font-sm);
+  color: var(--color-dark);
+}
+
+/* 本文 */
+.bl_voiceCard_body {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+}
+
+/* 注意書き */
+.bl_voiceCard_note {
+  margin-top: 16px;
+  font-size: var(--font-xs);
+  color: var(--color-gray);
+}
+
+/* ===========================================
+   Tablet (768px~)
+=========================================== */
+@media screen and (min-width: 768px) {
+  .bl_voiceCont {
+    padding-inline: 20px;
+  }
+
+  /* レイアウト */
+  .ly_cont.ly_voice {
+    padding-block: 70px 120px;
+  }
+
+  /* フィルター */
+  .bl_voiceFilter {
+    margin-bottom: 48px;
+  }
+
+  .bl_voiceFilter_tab {
+    font-size: var(--font-lg);
+    padding: 20px 32px;
+  }
+
+  .bl_voiceFilter_dropdown {
+    padding: 32px 40px;
+  }
+
+  .bl_voiceFilter_selectBtn {
+    padding: 16px 24px;
+  }
+
+  .bl_voiceFilter_selectText {
+    font-size: var(--font-base);
+  }
+
+  /* カテゴリータイトル */
+  .bl_voiceGroup_header {
+    gap: var(--space-sm);
+    margin-bottom: 28px;
+  }
+
+  .bl_voiceGroup_circle {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bl_voiceGroup_ttl {
+    font-size: var(--font-xl);
+  }
+
+  /* リスト */
+  .bl_voiceList {
+    gap: 48px 32px;
+  }
+
+  /* カード - タブレット用オーバーライド */
+  .bl_voiceCard--list {
+    gap: var(--space-xl);
+    padding: 24px 24px 40px;
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_ttl {
+    font-size: var(--font-xl);
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_name {
+    font-size: var(--font-base);
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_metaRow dt {
+    font-size: var(--font-base);
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_metaRow dd {
+    font-size: var(--font-base);
+  }
+
+  .bl_voiceCard_body {
+    font-size: var(--font-lg);
+  }
+
+  .bl_voiceCard_note {
+    font-size: var(--font-sm);
+  }
+}
+
+/* ===========================================
+   PC (1024px~)
+=========================================== */
+@media screen and (min-width: 1024px) {
+  .bl_voiceCont {
+    padding-inline: 40px;
+  }
+
+  /* カード - PC横並びレイアウト */
+  .bl_voiceCard_header {
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-20);
+  }
+
+  /* コンマアイコン（一覧版固有） */
+  .bl_voiceCard_header::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 26px;
+    width: 56px;
+    height: 56px;
+    background: url('../img/icons/comma.svg') no-repeat center / contain;
+    z-index: 0;
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_thumb {
+    max-width: 588px;
+    min-height: 320px;
+    aspect-ratio: 147 / 80;
+    flex-shrink: 0;
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_info {
+    flex: 1;
+    padding-top: 24px;
+    padding-right: 60px;
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_ttl {
+    font-size: var(--font-3xl);
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_meta {
+    margin-top: 40px;
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_metaRow dt {
+    width: 100px;
+    font-size: var(--font-lg);
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_metaRow dd {
+    font-size: var(--font-lg);
+  }
+
+  .bl_voiceCard_note {
+    margin-top: 40px;
+  }
+}

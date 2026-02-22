@@ -155,6 +155,26 @@
   }
 }
 
+/* 垂直無限スクロール（上方向） */
+@keyframes infiniteScrollY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+/* フェードイン */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* ================================================
  リセットの記述
 ================================================ */
@@ -2389,7 +2409,7 @@ body.is_menuOpen {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    animation: ctaVscroll 20s linear infinite;
+    animation: infiniteScrollY 20s linear infinite;
   }
 
   .bl_cta_vscroll__right .bl_cta_vscroll_track {
@@ -2406,16 +2426,6 @@ body.is_menuOpen {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
-  }
-
-  @keyframes ctaVscroll {
-    from {
-      transform: translateY(0);
-    }
-
-    to {
-      transform: translateY(-50%);
-    }
   }
 
   /* Price Row */
