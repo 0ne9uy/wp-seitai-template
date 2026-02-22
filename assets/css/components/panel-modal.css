@@ -1,0 +1,135 @@
+/**
+ * Component: panel-modal.css
+ * Usage: パネルモーダル共通（WEB予約・LINE予約・電話予約）
+ * Source: base.css から分割
+ *
+ * 構成:
+ * - .bl_panelModal: モーダルコンテナ
+ * - .bl_panelModal_body: ボディ
+ * - .bl_panelModal_area: エリアブロック
+ * - .bl_panelModal_list: リスト
+ * - .bl_panelModal_item: アイテム
+ */
+
+/* ================================================
+   パネルモーダル共通（モバイルファースト）
+   ================================================ */
+.bl_panelModal {
+  position: fixed;
+  overflow-y: auto;
+  scrollbar-width: none;
+  top: 63px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 63px);
+  background: var(--color-cream);
+  border-inline: 6px solid var(--color-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.bl_panelModal::-webkit-scrollbar {
+  display: none;
+}
+
+.bl_panelModal.is_open {
+  opacity: 1;
+  visibility: visible;
+  padding-bottom: 40px;
+}
+
+.bl_panelModal_body {
+  padding: 0 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.bl_panelModal_area {
+  background: var(--color-cream-dark);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bl_panelModal_areaLabel {
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  background: var(--color-primary-dark);
+  color: #fff;
+  font-size: var(--font-lg);
+  font-weight: 700;
+  border-radius: 12px 12px 0 0;
+}
+
+.bl_panelModal_list {
+  padding: 0 16px 24px 16px;
+}
+
+.bl_panelModal_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: inherit;
+}
+
+.bl_panelModal_itemInfo {
+  flex: 1;
+}
+
+.bl_panelModal_itemName {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0 0 4px;
+}
+
+.bl_panelModal_itemAddr {
+  font-size: var(--font-sm);
+  color: var(--color-gray);
+  margin: 0;
+}
+
+.bl_panelModal_itemArrow {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+/* WEB予約: 青グラデーション */
+.bl_panelModal__booking .bl_panelModal_itemArrow {
+  background: linear-gradient(90deg, #00a4bf 0%, #0062ae 100%);
+}
+
+/* LINE予約: 緑グラデーション */
+.bl_panelModal__line .bl_panelModal_itemArrow {
+  background: linear-gradient(90deg, #00b900 0%, #008c00 100%);
+}
+
+/* 電話予約: オレンジグラデーション */
+.bl_panelModal__phone .bl_panelModal_itemArrow {
+  background: linear-gradient(90deg, #ff8c00 0%, #e05500 100%);
+}
+
+/* ================================================
+   Tablet (768px〜)
+   ================================================ */
+@media screen and (min-width: 768px) {
+  .bl_panelModal {
+    top: 112px;
+    height: calc(100vh - 112px);
+    border-inline: 12px solid var(--color-gold);
+  }
+}

@@ -1,0 +1,59 @@
+/**
+ * Component: floating-buttons.css
+ * Usage: モバイル用フローティングボタン
+ * Source: base.css から分割
+ *
+ * 構成:
+ * - .bl_floatingBtns: ボタンコンテナ
+ * - .bl_floatingBtn: 個別ボタン
+ * - .bl_floatingBtn--web: WEB予約ボタン
+ * - .bl_floatingBtn--line: LINE予約ボタン
+ * - .bl_floatingBtn--phone: 電話ボタン
+ */
+
+/* ================================================
+   フローティングボタン（モバイルファースト）
+   ================================================ */
+.bl_floatingBtns {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex !important;
+  z-index: 1500;
+  gap: 1px;
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bl_floatingBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.bl_floatingBtn:hover {
+  opacity: 0.85;
+}
+
+.bl_floatingBtn--web {
+  background: var(--gradient-blue-web);
+}
+
+.bl_floatingBtn--line {
+  background: var(--gradient-green);
+}
+
+.bl_floatingBtn--phone {
+  background: var(--gradient-phone);
+}
