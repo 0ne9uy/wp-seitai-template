@@ -17,12 +17,12 @@
   width: 50%;
 }
 
-.bl_shopList_tab.is-active {
+.bl_shopList_tab.is_active {
   color: #fff;
   background-color: var(--color-primary-dark);
 }
 
-.bl_shopList_tab:hover:not(.is-active) {
+.bl_shopList_tab:hover:not(.is_active) {
   background-color: #f5e6c8;
 }
 
@@ -31,7 +31,7 @@
   display: none;
 }
 
-.bl_shopList_panel.is-active {
+.bl_shopList_panel.is_active {
   display: block;
 }
 
