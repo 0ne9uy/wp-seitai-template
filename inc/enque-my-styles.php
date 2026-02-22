@@ -51,6 +51,14 @@ function enqueue_my_styles()
         wp_enqueue_style('reason-card-css', $uri . '/assets/css/components/reason-card.css');
     }
 
+    // お悩みセクション
+    $needs_worry_section = is_singular('symptoms')
+        || is_singular('shop');
+
+    if ($needs_worry_section) {
+        wp_enqueue_style('worry-section-css', $uri . '/assets/css/components/worry-section.css');
+    }
+
     // TOPページでのみ読み込むCSS
     if (is_front_page()) {
         wp_enqueue_style('main-css', $uri . '/assets/css/main.css');
@@ -163,8 +171,6 @@ function enqueue_my_styles()
     // 店舗詳細ページ
     if (is_singular('shop')) {
         wp_enqueue_style('single-shop-css', $uri . '/assets/css/single-shop.css');
-        // 暫定: worry セクション用（Phase 1 でコンポーネント化予定）
-        wp_enqueue_style('single-symptoms-css', $uri . '/assets/css/single-symptoms.css');
     }
     // お知らせ詳細ページ
     if (is_singular('info')) {
