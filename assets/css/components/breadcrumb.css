@@ -1,0 +1,103 @@
+/**
+ * Component: breadcrumb.css
+ * Usage: パンくずリストコンポーネント
+ * Source: base.css から分割
+ *
+ * 構成:
+ * - .bl_breadcrumb: コンテナ
+ * - .bl_breadcrumb_inner: 内部ラッパー
+ * - .bl_breadcrumb_list: リスト
+ * - .bl_breadcrumb_item: アイテム
+ * - .bl_breadcrumb_link: リンク
+ * - .bl_breadcrumb_current: 現在ページ
+ */
+
+/* ================================================
+   パンくずリスト（モバイルファースト）
+   ================================================ */
+.bl_breadcrumb {
+  background-color: #feefd0;
+  padding-block: 16px;
+  padding-inline: 16px;
+}
+
+.bl_breadcrumb_inner {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+.bl_breadcrumb_list {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bl_breadcrumb_item {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-sm);
+  color: #231815;
+}
+
+.bl_breadcrumb_item::after {
+  content: '——';
+  margin-inline: 12px;
+  color: #231815;
+}
+
+.bl_breadcrumb_item:last-child::after {
+  display: none;
+}
+
+.bl_breadcrumb_link {
+  color: #231815;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.bl_breadcrumb_link:hover {
+  opacity: 0.7;
+}
+
+.bl_breadcrumb_current {
+  color: #231815;
+}
+
+/* ================================================
+   Tablet (768px〜)
+   ================================================ */
+@media screen and (min-width: 768px) {
+  .bl_breadcrumb {
+    padding-block: 20px;
+    padding-inline: var(--space-2xl);
+  }
+
+  .bl_breadcrumb_item {
+    font-size: var(--font-base);
+  }
+
+  .bl_breadcrumb_item::after {
+    margin-inline: 16px;
+  }
+}
+
+/* ================================================
+   PC (1024px〜)
+   ================================================ */
+@media screen and (min-width: 1024px) {
+  .bl_breadcrumb {
+    padding-block: 24px;
+    padding-inline: var(--space-2xl);
+  }
+
+  .bl_breadcrumb_item {
+    font-size: var(--font-base);
+  }
+
+  .bl_breadcrumb_item::after {
+    margin-inline: 20px;
+  }
+}

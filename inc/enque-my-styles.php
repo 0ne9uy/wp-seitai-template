@@ -22,6 +22,8 @@ function enqueue_my_styles()
     wp_enqueue_style('shop-modal-css', $uri . '/assets/css/components/shop-modal.css');
     wp_enqueue_style('post-meta-css', $uri . '/assets/css/components/post-meta.css');
     wp_enqueue_style('cta-css', $uri . '/assets/css/components/cta.css');
+    wp_enqueue_style('breadcrumb-css', $uri . '/assets/css/components/breadcrumb.css');
+    wp_enqueue_style('card-css', $uri . '/assets/css/components/card.css');
 
     // ========================================
     // コンポーネントCSS
