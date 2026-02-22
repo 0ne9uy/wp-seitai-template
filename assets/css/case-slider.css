@@ -1,0 +1,454 @@
+/**
+ * File: case-slider.css
+ * Usage: 症例報告スライダーセクションスタイル
+ * 使用ページ: front-page, single-shop, single-symptoms
+ *
+ * 依存コンポーネント:
+ * - components/case-card.css（.bl_caseCard 基本スタイル）
+ * - components/beer-slider.css（.beer-slider 基本スタイル）
+ */
+
+/* ========================================
+   症例報告スライダー レイアウト
+   ======================================== */
+.ly_case {
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+.bl_case_inner {
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.bl_case_header {
+  padding-inline: var(--section-padding-inline);
+}
+
+.bl_case_desc {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+}
+
+.bl_case_sliderWrap {
+  position: relative;
+  margin-inline: auto;
+}
+
+.bl_case_btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.bl_case_btn__prev {
+  left: 10px;
+}
+
+.bl_case_btn__next {
+  right: 10px;
+}
+
+.bl_case_slider {
+  width: 100%;
+}
+
+.ly_case .bl_caseSwiper {
+  overflow: visible;
+}
+
+.bl_case_slide {
+  height: auto;
+}
+
+/* ========================================
+   症例報告カード コンテキスト別オーバーライド
+   基本スタイルは components/case-card.css で定義
+   スライダー内での差異のみここで上書き
+   ======================================== */
+.ly_case .bl_caseCard {
+  height: 100%;
+  padding: 8px 8px var(--space-xl) 8px;
+}
+
+.ly_case .bl_caseCard_thumb {
+  aspect-ratio: 4 / 3;
+}
+
+.ly_case .bl_caseCard_info {
+  padding-inline: var(--space-sm);
+}
+
+.ly_case .bl_caseCard_ttl {
+  color: var(--color-primary);
+  font-size: var(--font-xl);
+}
+
+.ly_case .bl_caseCard_metaRow {
+  padding: 8px 0;
+}
+
+.ly_case .bl_caseCard_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: 100%;
+  max-width: 240px;
+  background-color: var(--color-primary-dark);
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+/* 症例報告ボタン */
+.ly_case .bl_case_btnWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+/* ----------------------------------------
+   タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+  .bl_case_header {
+    margin-bottom: 40px;
+  }
+
+  .bl_case_inner {
+    padding: 0 var(--space-lg);
+  }
+
+  .bl_case_desc {
+    font-size: var(--font-base);
+    text-align: left;
+  }
+
+  .bl_case_btn {
+    transform: translateY(-80%);
+  }
+
+  .bl_case_btn__prev {
+    left: 0;
+  }
+
+  .bl_case_btn__next {
+    right: 0;
+  }
+
+  .ly_case .bl_caseCard {
+    padding: 20px;
+  }
+
+  .ly_case .bl_caseCard_metaRow {
+    padding-block: var(--space-sm);
+  }
+
+  .ly_case .bl_caseCard_metaRow dt {
+    width: 120px;
+  }
+
+  .ly_case .bl_caseCard_btn {
+    padding-inline: 48px;
+  }
+
+  .ly_case .bl_case_btnWrap {
+    margin-top: 40px;
+  }
+}
+
+/* ----------------------------------------
+   PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .ly_case {
+    margin-top: 80px;
+  }
+
+  .bl_case_header {
+    margin-bottom: 32px;
+  }
+
+  .bl_case_inner {
+    padding-inline: 40px;
+  }
+
+  .bl_case_desc {
+    font-size: var(--font-base);
+  }
+
+  .bl_case_sliderWrap {
+    max-width: 100%;
+  }
+
+  .bl_case_slider {
+    max-width: 100%;
+  }
+
+  .ly_case .bl_caseSwiper {
+    overflow: visible;
+  }
+
+  .ly_case .bl_case_slide {
+    width: auto;
+  }
+
+  .bl_case_btn__prev {
+    left: 20px;
+  }
+
+  .bl_case_btn__next {
+    right: 20px;
+  }
+
+  .ly_case .bl_caseCard {
+    padding: 24px;
+    max-width: 588px;
+  }
+
+  .ly_case .bl_caseCard_metaRow dt,
+  .ly_case .bl_caseCard_metaRow dd {
+    font-size: var(--font-lg);
+  }
+
+  .ly_case .bl_case_btnWrap {
+    margin-top: 48px;
+  }
+}
+
+/* ========================================
+   症例報告モーダル
+   ======================================== */
+.bl_caseModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.bl_caseModal.is_open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bl_caseModal_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.bl_caseModal_content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bl_caseModal_close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F39800;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.bl_caseModal_close img {
+  filter: brightness(0) invert(1);
+}
+
+.bl_caseModal_close:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+.bl_caseModal_inner {
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.bl_caseModal_ttl {
+  color: var(--color-primary);
+  font-size: var(--font-xl);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-right: 48px;
+}
+
+/* モーダル内カード */
+.bl_caseCard--modal {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.bl_caseCard--modal .bl_caseCard_header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: 40px;
+}
+
+.bl_caseCard--modal .bl_caseCard_slider {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.bl_caseCard--modal .bl_caseCard_info {
+  width: 100%;
+  padding: 0;
+}
+
+/* SP/PCタイトル表示切替 */
+.bl_caseModal_ttl--sp {
+  display: block;
+}
+
+.bl_caseCard--modal .bl_caseCard_ttl--pc {
+  display: none;
+}
+
+.bl_caseCard--modal .bl_caseCard_meta {
+  margin-top: 0;
+}
+
+.bl_caseCard--modal .bl_caseCard_metaRow {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-cream-dark);
+}
+
+.bl_caseCard--modal .bl_caseCard_metaRow:first-child {
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.bl_caseCard--modal .bl_caseCard_metaRow dt {
+  width: 100px;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.bl_caseCard--modal .bl_caseCard_metaRow dd {
+  margin: 0;
+  color: var(--color-dark);
+}
+
+/* ========================================
+   モーダル内 ビフォーアフタースライダー オーバーライド
+   基本スタイルは components/beer-slider.css で定義
+   ======================================== */
+/* モーダル内では特別なオーバーライド不要 */
+/* beer-slider.css の基本スタイルをそのまま継承 */
+
+/* ========================================
+   モーダル内 単独画像 オーバーライド
+   基本スタイルは components/case-card.css で定義
+   ======================================== */
+/* case-card.css の .bl_caseCard_single をそのまま継承 */
+
+/* モーダル内本文 */
+.bl_caseModal_contentText {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+/* ボディスクロールロック */
+body.is_modalOpen {
+  overflow: hidden;
+}
+
+/* タブレット (768px以上) */
+@media screen and (min-width: 768px) {
+  .bl_caseModal_inner {
+    padding: 40px;
+  }
+
+  .bl_caseModal_ttl {
+    font-size: var(--font-2xl);
+  }
+
+  .bl_caseModal_close {
+    top: 24px;
+    right: 24px;
+  }
+
+  .bl_caseCard--modal .bl_caseCard_metaRow dt {
+    width: 120px;
+  }
+}
+
+/* PC (1024px以上) - モーダル横並びレイアウト */
+@media screen and (min-width: 1024px) {
+  .bl_caseModal_content {
+    max-width: 900px;
+  }
+
+  /* SP用タイトルを非表示、PC用タイトルを表示 */
+  .bl_caseModal_ttl--sp {
+    display: none;
+  }
+
+  .bl_caseCard--modal .bl_caseCard_ttl--pc {
+    display: block;
+    margin-bottom: var(--space-md);
+    color: #F39800;
+  }
+
+  /* 横並びレイアウト */
+  .bl_caseCard--modal .bl_caseCard_header {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .bl_caseCard--modal .bl_caseCard_slider {
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  .bl_caseCard--modal .bl_caseCard_info {
+    flex: 1;
+    padding: 0;
+  }
+
+  .bl_caseCard--modal .bl_caseCard_meta {
+    margin-top: 0;
+  }
+}
