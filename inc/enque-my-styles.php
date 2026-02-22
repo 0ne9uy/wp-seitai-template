@@ -13,6 +13,7 @@ function enqueue_my_styles()
 
     // 全ページで読み込むCSS
     wp_enqueue_style('base-css', $uri . '/assets/css/base.css');
+    wp_enqueue_style('utilities-css', $uri . '/assets/css/utilities.css');
     wp_enqueue_style('shop-card-css', $uri . '/assets/css/shop-card.css');
     wp_enqueue_style('shop-modal-css', $uri . '/assets/css/components/shop-modal.css');
     wp_enqueue_style('post-meta-css', $uri . '/assets/css/components/post-meta.css');
