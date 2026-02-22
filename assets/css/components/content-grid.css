@@ -1,0 +1,80 @@
+/**
+ * Component: content-grid.css
+ * Usage: アーカイブページ共通コンテンツグリッド
+ * Source: base.css から分割
+ *
+ * 構成:
+ * - .bl_post: 投稿コンテナ
+ * - .bl_content: コンテンツグリッド
+ * - .bl_column: カード共通スタイル
+ */
+
+/* ================================================
+   コンテンツグリッド（モバイルファースト）
+   ================================================ */
+
+/* 投稿コンテナ */
+.bl_post {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+/* コンテンツグリッド（アーカイブページ共通） */
+.bl_content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-20);
+}
+
+/* カード共通スタイル */
+.bl_column {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.bl_column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.bl_column a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bl_column img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.bl_column p {
+  padding: var(--space-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.bl_column_content {
+  padding: var(--space-md);
+}
+
+.bl_column_title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: #333;
+}
+
+.bl_column_excerpt {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}

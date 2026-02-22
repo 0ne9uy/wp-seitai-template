@@ -24,6 +24,8 @@ function enqueue_my_styles()
     wp_enqueue_style('cta-css', $uri . '/assets/css/components/cta.css');
     wp_enqueue_style('breadcrumb-css', $uri . '/assets/css/components/breadcrumb.css');
     wp_enqueue_style('card-css', $uri . '/assets/css/components/card.css');
+    wp_enqueue_style('footer-css', $uri . '/assets/css/components/footer.css');
+    wp_enqueue_style('content-grid-css', $uri . '/assets/css/components/content-grid.css');
 
     // ========================================
     // コンポーネントCSS

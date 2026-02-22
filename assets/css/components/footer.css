@@ -1,0 +1,144 @@
+/**
+ * Component: footer.css
+ * Usage: フッターコンポーネント
+ * Source: base.css から分割
+ *
+ * 構成:
+ * - .ly_footer: フッターレイアウト
+ * - .bl_footer_main: メインエリア
+ * - .bl_footer_logo: ロゴ
+ * - .bl_footer_nav: ナビゲーション
+ * - .bl_footer_bottom: 下部エリア
+ * - .bl_footer_policy: ポリシーリンク
+ * - .bl_footer_copyright: コピーライト
+ * - .bl_footer_img: 下部画像
+ */
+
+/* ================================================
+   フッター（モバイルファースト）
+   ================================================ */
+.ly_footer {
+  background: var(--color-cream);
+  color: #231815;
+  text-align: center;
+  padding-block: 32px 0px;
+}
+
+.bl_footer_main {
+  padding-inline: 16px;
+}
+
+.bl_footer_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-inline: auto;
+}
+
+.bl_footer_logo img {
+  width: 94.8px;
+  height: auto;
+}
+
+.bl_footer_logo_name {
+  font-size: var(--font-lg);
+  font-weight: 800;
+}
+
+.bl_footer_nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 0;
+  margin-top: var(--space-xl);
+  max-width: 365px;
+  margin-inline: auto;
+}
+
+.bl_footer_nav_list {
+  text-align: center;
+}
+
+.bl_footer_nav_list:nth-child(1) {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.bl_footer_nav_list:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.bl_footer_nav_list:nth-child(3) {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.bl_footer_nav_list:nth-child(4) {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.bl_footer_nav_list li {
+  padding-block: 8px;
+}
+
+.bl_footer_nav_list li a {
+  font-size: var(--font-lg);
+  transition: opacity var(--transition-fast);
+}
+
+.bl_footer_nav_list li a:hover {
+  opacity: 0.7;
+}
+
+.bl_footer_bottom {
+  margin-top: 32px;
+  border-top: 1px solid #f2e4cb;
+  padding: 16px;
+}
+
+.bl_footer_policy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-block: 20px 24px;
+}
+
+.bl_footer_policy a {
+  transition: opacity var(--transition-fast);
+}
+
+.bl_footer_policy a:hover {
+  opacity: 0.7;
+}
+
+.bl_footer_copyright {
+  font-size: 0.875rem;
+}
+
+/* フッター下部画像 */
+.bl_footer_img {
+  margin-top: 24px;
+}
+
+.bl_footer_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================================================
+   Tablet (560px〜)
+   ================================================ */
+@media screen and (min-width: 560px) {
+  .bl_footer_nav {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    max-width: 574px;
+  }
+
+  .bl_footer_nav_list:nth-child(1),
+  .bl_footer_nav_list:nth-child(2),
+  .bl_footer_nav_list:nth-child(3),
+  .bl_footer_nav_list:nth-child(4) {
+    grid-area: auto;
+  }
+}
