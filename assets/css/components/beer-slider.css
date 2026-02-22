@@ -1,0 +1,169 @@
+/**
+ * Component: beer-slider.css
+ * Usage: ビフォーアフタースライダー（.beer-slider）コンポーネント
+ *
+ * 使用箇所:
+ * - archive-case.php（症例報告一覧）
+ * - single-case.php（症例報告詳細）
+ * - parts/case-slider.php（トップページ・症状詳細のスライダー）
+ */
+
+/* ===========================================
+   ビフォーアフタースライダー
+=========================================== */
+.beer-slider {
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  touch-action: none;
+  user-select: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-dark);
+}
+
+/* After画像（背面・ベース画像） */
+.beer-slider>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Before画像コンテナ（前面・クリップ領域） */
+.beer-reveal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Before画像 */
+.beer-reveal>img {
+  width: var(--slider-width, 100%);
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* 中央の縦線 */
+.beer-slider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--beer-position, 50%);
+  width: 2px;
+  background: #ffffff;
+  z-index: 5;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* ドラッグハンドル */
+.beer-handle {
+  position: absolute;
+  top: 50%;
+  left: var(--beer-position, 50%);
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--beer-handle-color, #6fc424);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ew-resize;
+  touch-action: none;
+  pointer-events: auto;
+}
+
+/* ハンドル内の矢印アイコン */
+.beer-handle::before,
+.beer-handle::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+/* 左矢印 */
+.beer-handle::before {
+  border-right: 8px solid #fff;
+  margin-right: 4px;
+}
+
+/* 右矢印 */
+.beer-handle::after {
+  border-left: 8px solid #fff;
+  margin-left: 4px;
+}
+
+/* Beforeラベル（左上） */
+.beer-reveal[data-beer-label]::after {
+  content: attr(data-beer-label);
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+  font-size: var(--font-xs);
+  background: var(--color-primary);
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  font-weight: 700;
+  border-radius: var(--radius-xs);
+}
+
+/* AFTERラベルコンテナ（右からクリップ） */
+.beer-after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - var(--beer-position, 50%));
+  overflow: hidden;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* Afterラベル（右上） */
+.beer-after[data-beer-label]::after {
+  content: attr(data-beer-label);
+  position: absolute;
+  color: #fff;
+  font-size: var(--font-xs);
+  background: var(--color-primary);
+  top: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  font-weight: 700;
+  border-radius: var(--radius-xs);
+}
+
+/* ===========================================
+   Tablet (768px~)
+=========================================== */
+@media screen and (min-width: 768px) {
+
+  /* スライダーラベル */
+  .beer-reveal[data-beer-label]::after,
+  .beer-after[data-beer-label]::after {
+    font-size: var(--font-sm);
+    padding: 6px 16px;
+  }
+}

@@ -1,0 +1,248 @@
+/**
+ * Component: case-card.css
+ * Usage: 症例報告カード（.bl_caseCard）コンポーネント
+ *
+ * 使用箇所:
+ * - archive-case.php（症例報告一覧）
+ * - single-case.php（症例報告詳細）
+ * - parts/case-slider.php（トップページ・症状詳細のスライダー）
+ * - single-shop.php（店舗詳細内）
+ */
+
+/* ===========================================
+   カード基本スタイル
+=========================================== */
+.bl_caseCard {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: var(--color-cream);
+  box-shadow: var(--shadow-card);
+}
+
+.bl_caseCard_header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.bl_caseCard_slider {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.bl_caseCard_thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.bl_caseCard_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===========================================
+   Beforeのみ / Afterのみの単独画像表示
+=========================================== */
+.bl_caseCard_single {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.bl_caseCard_single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bl_caseCard_single[data-label]::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  padding: 4px 12px;
+  color: #fff;
+  font-size: var(--font-xs);
+  font-weight: 700;
+  background: var(--color-primary);
+  border-radius: var(--radius-xs);
+}
+
+/* ===========================================
+   カード情報エリア
+=========================================== */
+.bl_caseCard_info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bl_caseCard_ttl {
+  color: var(--color-gold);
+  font-size: var(--font-lg);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 700;
+}
+
+/* メタ情報（来院者・症状・通院回数・期間） */
+.bl_caseCard_meta {
+  margin-top: 24px;
+  padding: 0;
+}
+
+.bl_caseCard_metaRow {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-cream-dark);
+}
+
+.bl_caseCard_metaRow:first-child {
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.bl_caseCard_metaRow dt {
+  width: 80px;
+  flex-shrink: 0;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.bl_caseCard_metaRow dd {
+  margin: 0;
+  font-size: var(--font-sm);
+  color: var(--color-dark);
+}
+
+/* 詳しく見るボタン */
+.bl_caseCard_btn {
+  display: block;
+  margin-top: 24px;
+  margin-inline: auto;
+  padding-block: 16px;
+  padding-inline: 60px;
+  background-color: var(--color-gold);
+  color: #fff;
+  font-size: var(--font-base);
+  font-weight: 700;
+  border-radius: 9999px;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.bl_caseCard_btn:hover {
+  opacity: 0.8;
+}
+
+/* ===========================================
+   Tablet (768px~)
+=========================================== */
+@media screen and (min-width: 768px) {
+
+  /* カード */
+  .bl_caseCard {
+    padding: 24px 24px 40px;
+  }
+
+  .bl_caseCard_ttl {
+    font-size: var(--font-xl);
+  }
+
+  .bl_caseCard_metaRow dt {
+    font-size: var(--font-base);
+  }
+
+  .bl_caseCard_metaRow dd {
+    font-size: var(--font-base);
+  }
+
+  .bl_caseCard_btn {
+    font-size: var(--font-lg);
+    margin-top: 32px;
+  }
+
+  /* ラベル */
+  .bl_caseCard_single[data-label]::after {
+    font-size: var(--font-sm);
+    padding: 6px 16px;
+  }
+}
+
+/* ===========================================
+   PC (1024px~)
+=========================================== */
+@media screen and (min-width: 1024px) {
+
+  /* カード - 横並びレイアウト */
+  .bl_caseCard_header {
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-20);
+  }
+
+  .bl_caseCard_header::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 40px;
+    width: 58px;
+    height: 58px;
+    background: url('../img/icons/comma.svg') no-repeat center / contain;
+  }
+
+  .bl_caseCard_slider {
+    width: 50%;
+    max-width: 500px;
+    flex-shrink: 0;
+  }
+
+  .bl_caseCard_thumb {
+    max-width: 588px;
+    min-height: 320px;
+    aspect-ratio: 147 / 80;
+    flex-shrink: 0;
+  }
+
+  .bl_caseCard_info {
+    flex: 1;
+    padding-top: 24px;
+    padding-inline: 60px;
+    z-index: 10;
+  }
+
+  .bl_caseCard_ttl {
+    font-size: var(--font-3xl);
+  }
+
+  .bl_caseCard_meta {
+    margin-top: 40px;
+  }
+
+  .bl_caseCard_metaRow dt {
+    width: 100px;
+    font-size: var(--font-lg);
+  }
+
+  .bl_caseCard_metaRow dd {
+    font-size: var(--font-lg);
+  }
+
+  .bl_caseCard_btn {
+    margin-top: 40px;
+    padding-inline: 100px;
+  }
+}

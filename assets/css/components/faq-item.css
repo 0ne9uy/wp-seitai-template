@@ -1,0 +1,163 @@
+/**
+ * Component: faq-item.css
+ * Usage: FAQ項目（.bl_faqItem）コンポーネント
+ *
+ * 使用箇所:
+ * - pages/page-faq.php（よくある質問ページ）
+ * - single-symptoms.php（症状詳細ページ）
+ * - single-shop.php（店舗詳細ページ）
+ *
+ * カラースキーム:
+ * - デフォルト: gold（FAQページ、店舗詳細）
+ * - 症状詳細: --faq-toggle-color を primary-dark に上書き
+ */
+
+/* ===========================================
+   FAQ項目
+=========================================== */
+.bl_faqItem {
+  background: var(--color-cream);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+/* 質問ボタン */
+.bl_faqItem_question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 8px 16px;
+  background-color: var(--color-cream-dark);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Q.ラベル */
+.bl_faqItem_qLabel {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  font-size: var(--font-lg);
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+}
+
+/* 質問テキスト */
+.bl_faqItem_qText {
+  flex: 1;
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+/* トグルアイコン（丸ボタン）
+   CSS変数でカラーカスタマイズ可能 */
+.bl_faqItem_toggle {
+  flex-shrink: 0;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background-color: var(--faq-toggle-color, var(--color-gold));
+  border-radius: 50%;
+}
+
+.bl_faqItem_toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 2px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+.bl_faqItem_toggle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 14px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 開いた状態: 縦線を非表示 */
+.bl_faqItem_question[aria-expanded="true"] .bl_faqItem_toggle::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* 回答エリア */
+.bl_faqItem_answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: var(--color-cream);
+}
+
+.bl_faqItem_answer p {
+  padding: 16px 20px 24px 20px;
+  font-size: var(--font-sm);
+  color: var(--color-dark);
+}
+
+/* ===========================================
+   Tablet (768px~)
+=========================================== */
+@media screen and (min-width: 768px) {
+
+  .bl_faqItem_question {
+    padding: 28px 32px;
+    gap: var(--space-sm);
+  }
+
+  .bl_faqItem_qLabel {
+    font-size: var(--font-xl);
+  }
+
+  .bl_faqItem_qText {
+    font-size: var(--font-base);
+  }
+
+  .bl_faqItem_toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bl_faqItem_toggle::before {
+    width: 18px;
+  }
+
+  .bl_faqItem_toggle::after {
+    height: 18px;
+  }
+
+  .bl_faqItem_answer p {
+    padding: 0 32px 32px 32px;
+    font-size: var(--font-base);
+  }
+}
+
+/* ===========================================
+   PC (1024px~)
+=========================================== */
+@media screen and (min-width: 1024px) {
+
+  .bl_faqItem_question {
+    padding: 20px 24px 20px 40px;
+  }
+
+  .bl_faqItem_answer p {
+    padding: 20px 40px 32px 40px;
+    font-size: var(--font-lg);
+  }
+
+  .bl_faqItem_qText {
+    font-size: var(--font-lg);
+  }
+}
