@@ -1,0 +1,373 @@
+/**
+ * Component: symptoms-section.css
+ * Usage: お悩みセクション共通コンポーネント
+ * Source: base.css から分割
+ *
+ * 構成:
+ * - .bl_symptomsIntro: イントロセクション
+ * - .bl_symptomsSlider: Swiperスライダー
+ * - .bl_symptomsSlide: スライドアイテム
+ * - .bl_symptomsCatList: カテゴリー別お悩みリスト
+ * - .bl_symptomsCatGroup: カテゴリーグループ
+ */
+
+/* ================================================
+   お悩みセクション（モバイルファースト）
+   ================================================ */
+
+/* イントロセクション */
+.bl_symptomsIntro {
+  margin-bottom: var(--space-xl);
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+.bl_symptomsIntro_left {
+  margin-bottom: var(--space-sm);
+}
+
+.bl_symptomsIntro_label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.bl_symptomsIntro_labelCircle {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+}
+
+.bl_symptomsIntro_ttl {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: #231815;
+}
+
+.bl_symptomsIntro_txt {
+  font-size: var(--font-base);
+  font-feature-settings: 'palt';
+  letter-spacing: 0.05em;
+  color: #231815;
+}
+
+/* Swiperスライダー */
+.bl_symptomsSlider {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.bl_symptomsSwiper.swiper {
+  overflow: visible !important;
+}
+
+.bl_symptomsSlide {
+  display: flex;
+  flex-direction: column;
+}
+
+.bl_symptomsSlide_link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--transition-fast);
+}
+
+.bl_symptomsSlide_link:hover {
+  opacity: 0.85;
+}
+
+.bl_symptomsSlide_thumb {
+  width: 100%;
+  max-width: 376px;
+  aspect-ratio: 1;
+  margin-bottom: var(--space-md);
+  border-radius: 24px;
+  background: lightgray;
+  box-shadow: 4px 4px 20px 4px rgba(35, 24, 21, 0.05);
+  overflow: hidden;
+}
+
+.bl_symptomsSlide_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.bl_symptomsSlide_link:hover .bl_symptomsSlide_thumb img {
+  transform: scale(1.05);
+}
+
+.bl_symptomsSlide_content {
+  padding-inline: 4px;
+}
+
+.bl_symptomsSlide_ttl {
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: #f39800;
+}
+
+.bl_symptomsSlide_txt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--font-base);
+  color: #231815;
+}
+
+/* ナビゲーションボタン */
+.bl_symptomsSlider_btn {
+  position: absolute;
+  top: 188px;
+  /* JSで動的に調整 */
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: #8fc31f;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.bl_symptomsSlider_btn__prev {
+  left: 0;
+}
+
+.bl_symptomsSlider_btn__next {
+  right: 0;
+}
+
+.bl_symptomsSlider_btn:hover {
+  opacity: 0.8;
+}
+
+.bl_symptomsSlider_btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.bl_symptomsSlider_btn .el_arrowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* カテゴリー別お悩みリスト */
+.bl_symptomsCatList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+.bl_symptomsCatGroup {
+  padding: var(--space-lg) var(--space-md);
+  border-radius: 16px;
+  background: var(--color-cream-dark);
+  box-shadow: 4px 4px 20px 4px #2318150d;
+}
+
+.bl_symptomsCatGroup_ttl {
+  margin-bottom: var(--space-md);
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: #231815;
+}
+
+.bl_symptomsCatGroup_list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xs);
+}
+
+.bl_symptomsCatGroup_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 41px;
+  padding: var(--space-sm) var(--space-xs);
+  border-radius: 6px;
+  background: #f39800;
+  font-size: var(--font-sm);
+  color: #fff;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.bl_symptomsCatGroup_item:hover {
+  opacity: 0.8;
+}
+
+.bl_symptomsCatList_empty {
+  padding: var(--space-2xl) var(--space-20);
+  text-align: center;
+  color: #666;
+}
+
+.bl_symptomsCatList_note {
+  margin-top: 32px;
+  text-align: center;
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ================================================
+   Tablet (768px〜)
+   ================================================ */
+@media screen and (min-width: 768px) {
+
+  /* イントロ */
+  .bl_symptomsIntro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-2xl);
+    margin-bottom: 48px;
+    padding-inline: 20px;
+  }
+
+  .bl_symptomsIntro_left {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .bl_symptomsIntro_label {
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-lg);
+  }
+
+  .bl_symptomsIntro_labelCircle {
+    width: 8px;
+    height: 8px;
+  }
+
+  .bl_symptomsIntro_ttl {
+    font-size: var(--font-5xl);
+  }
+
+  .bl_symptomsIntro_right {
+    padding-top: 32px;
+  }
+
+  .bl_symptomsIntro_txt {
+    font-size: var(--font-lg);
+    text-align: left;
+  }
+
+  /* スライダー */
+  .bl_symptomsSlider {
+    margin-bottom: 80px;
+  }
+
+  .bl_symptomsSlider_btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .bl_symptomsSlider_btn__prev {
+    left: -16px;
+  }
+
+  .bl_symptomsSlider_btn__next {
+    right: -16px;
+  }
+
+  .bl_symptomsSlide_txt {
+    font-size: var(--font-lg);
+  }
+
+  /* カテゴリー別リスト */
+  .bl_symptomsCatList {
+    gap: var(--space-lg);
+    padding-inline: 20px;
+  }
+
+  .bl_symptomsCatGroup {
+    padding: var(--space-xl) var(--space-lg) var(--space-xl) var(--space-2xl);
+  }
+
+  .bl_symptomsCatGroup_ttl {
+    margin-bottom: var(--space-20);
+    font-size: var(--font-xl);
+  }
+
+  .bl_symptomsCatGroup_list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .bl_symptomsCatGroup_item {
+    border-radius: 8px;
+    min-height: 46px;
+    font-size: var(--font-lg);
+  }
+
+  .bl_symptomsCatList_note {
+    margin-top: 48px;
+    font-size: var(--font-5xl);
+  }
+}
+
+/* ================================================
+   PC (1024px〜)
+   ================================================ */
+@media screen and (min-width: 1024px) {
+  .bl_symptomsIntro {
+    padding-inline: 40px;
+  }
+
+  /* スライダー */
+  .bl_symptomsSlider {
+    max-width: 1400px;
+    margin-inline: auto;
+  }
+
+  .bl_symptomsSlide_txt {
+    font-size: var(--font-lg);
+  }
+
+  /* カテゴリー別リスト */
+  .bl_symptomsCatList {
+    padding-inline: 40px;
+    gap: var(--space-xl);
+  }
+
+  .bl_symptomsCatGroup {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xl);
+  }
+
+  .bl_symptomsCatGroup_ttl {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    font-size: var(--font-3xl);
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .bl_symptomsCatGroup_list {
+    flex: 1;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .bl_symptomsCatList_note {
+    font-size: var(--font-5xl);
+  }
+}
