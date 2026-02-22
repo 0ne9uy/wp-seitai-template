@@ -674,11 +674,4 @@
   }
 }
 
-/* ========================================
-   Wide PC (1280px〜)
-   ======================================== */
-@media screen and (min-width: 1280px) {
-  .ly_subp__singleSymptoms .el_sectionTtl {
-    font-size: var(--font-5xl);
-  }
-}
+/* Note: .el_sectionTtl の Wide PC スタイルは base.css で統一定義済み */

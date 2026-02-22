@@ -57,7 +57,7 @@
 
 .bl_formField input::placeholder,
 .bl_formField textarea::placeholder {
-  color: #d8d8d8;
+  color: #767676; /* WCAG AA準拠（4.5:1以上） */
 }
 
 .bl_formField select {
@@ -67,7 +67,7 @@
   background-position: right 12px center;
   background-size: 16px auto;
   padding-right: 36px;
-  color: #d8d8d8;
+  color: #767676; /* WCAG AA準拠 */
 }
 
 .bl_formField select.has-value {

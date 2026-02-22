@@ -1493,6 +1493,38 @@ body.is_menuOpen {
   text-align: center;
 }
 
+/* ================================================
+ アクセシビリティ
+================================================ */
+/* スクリーンリーダー専用（視覚的に非表示） */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* フォーカス可視化（キーボードナビゲーション用） */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ボタン・リンクのフォーカス */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
 @media screen and (min-width: 768px) {
   body {
     padding: var(--space-sm);
