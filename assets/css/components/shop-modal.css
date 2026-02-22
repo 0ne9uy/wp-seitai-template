@@ -126,12 +126,55 @@
     line-height: 1.8;
 }
 
+/* ========================================
+   モーダルコンテンツ（parts/shop/shop-modal.php用）
+   ======================================== */
+.bl_shopModal_content {
+    position: relative;
+    width: calc(100% - 24px);
+    max-width: 1000px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    background: var(--color-cream);
+    border-radius: 16px;
+    padding: 24px 16px 32px;
+}
+
+.bl_shopModal_content::-webkit-scrollbar {
+    display: none;
+}
+
+.bl_shopModal_tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+}
+
+.bl_shopModal_panels {
+    margin-top: 0;
+}
+
+.bl_shopModal_panels .bl_shopList_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    background-color: var(--color-primary);
+    padding: 20px;
+    border-radius: var(--radius-lg);
+}
+
 /* ----------------------------------------
    タブレット (768px以上)
    ---------------------------------------- */
 @media screen and (min-width: 768px) {
     .bl_shopModal_container {
         width: 90%;
+    }
+
+    .bl_shopModal_content {
+        width: calc(100% - 48px);
+        padding: 32px 32px 40px;
     }
 
     .bl_shopModal_ttl {
@@ -149,6 +192,11 @@
 
     .bl_shopModal_tabContainer .bl_shopList_panelWrap {
         margin: 0 var(--space-lg) var(--space-lg);
+    }
+
+    .bl_shopModal_panels .bl_shopList_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
