@@ -930,122 +930,7 @@ html::-webkit-scrollbar {
   padding-inline: var(--section-padding-inline);
 }
 
-/* ================================================
-  エレメントモジュール
-================================================ */
-/* ボタン */
-.el_btn {
-  font-size: 1.125rem;
-  font-weight: 600;
-  background: #23262d;
-  color: white;
-  border: #333 2px solid;
-  width: 300px;
-  height: 56px;
-  margin-top: 20px;
-  margin-inline: auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-base);
-}
-
-.el_btn_withIcon_img {
-  transition: all var(--transition-base);
-}
-
-.el_btn:hover,
-.el_btn:focus {
-  background: white;
-  color: #333;
-}
-
-.el_btn:hover .el_btn_withIcon_img,
-.el_btn:focus .el_btn_withIcon_img {
-  border-color: #333;
-  stroke: #333;
-}
-
-.el_btn_withIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
-}
-
-/* 矢印ボタン（SP: 40px / PC: 64px） */
-.el_arrowBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, #86bf00 0.06%, #20ae4f 99.94%);
-  filter: drop-shadow(2px 2px 8px rgba(35, 24, 21, 0.1));
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-.el_arrowBtn_icon {
-  transition: transform 0.3s ease;
-}
-
-.el_arrowBtn_icon__sp {
-  display: block;
-}
-
-.el_arrowBtn_icon__pc {
-  display: none;
-}
-
-/* 左矢印 */
-.el_arrowBtn__left .el_arrowBtn_icon {
-  transform: scaleX(-1);
-}
-
-/* ホバー：右矢印 */
-.el_arrowBtn__right:hover .el_arrowBtn_icon {
-  transform: translateX(3px);
-}
-
-/* ホバー：左矢印 */
-.el_arrowBtn__left:hover .el_arrowBtn_icon {
-  transform: scaleX(-1) translateX(3px);
-}
-
-/* グリーンボタン（共通） */
-.el_greenBtn {
-  display: flex;
-  gap: var(--space-sm);
-  padding-block: 10px;
-  background: var(--gradient-green);
-  color: #fff;
-  font-weight: 700;
-  border-radius: 999px;
-  text-decoration: none;
-  max-width: 284px;
-  width: 100%;
-  margin-inline: auto;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  box-shadow: 2px 4px 8px 2px rgba(35, 24, 21, 0.15);
-  transition: opacity 0.3s;
-  position: relative;
-}
-
-.el_greenBtn img {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.el_greenBtn:hover {
-  opacity: 0.8;
-}
+/* ボタン → 分割済み: assets/css/components/buttons.css */
 
 /* ページネーション → 分割済み: assets/css/components/pagination.css */
 
@@ -1446,31 +1331,7 @@ body.is_menuOpen {
     padding-block: 80px;
   }
 
-  /* 矢印ボタン（PC） */
-  .el_arrowBtn {
-    width: 48px;
-    height: 48px;
-  }
-
-  /* グリーンボタン（PC） */
-  .el_greenBtn {
-    font-size: var(--font-lg);
-    height: 60px;
-    max-width: 320px;
-  }
-
-  .el_greenBtn.md_right {
-    margin-right: 0;
-  }
-
-  .el_arrowBtn_icon__sp {
-    display: none;
-  }
-
-  .el_arrowBtn_icon__pc {
-    display: block;
-  }
-
+  /* ボタン → 分割済み: assets/css/components/buttons.css */
   /* ページネーション → 分割済み: assets/css/components/pagination.css */
 
   /* ヘッダー */

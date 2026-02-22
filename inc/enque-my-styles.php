@@ -16,6 +16,7 @@ function enqueue_my_styles()
     wp_enqueue_style('utilities-css', $uri . '/assets/css/utilities.css');
     wp_enqueue_style('pagination-css', $uri . '/assets/css/components/pagination.css');
     wp_enqueue_style('section-header-css', $uri . '/assets/css/components/section-header.css');
+    wp_enqueue_style('buttons-css', $uri . '/assets/css/components/buttons.css');
     wp_enqueue_style('shop-card-css', $uri . '/assets/css/shop-card.css');
     wp_enqueue_style('shop-modal-css', $uri . '/assets/css/components/shop-modal.css');
     wp_enqueue_style('post-meta-css', $uri . '/assets/css/components/post-meta.css');
