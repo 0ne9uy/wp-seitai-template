@@ -68,22 +68,26 @@
 }
 
 .bl_shopModal_close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     padding: 0;
     border: none;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background: var(--color-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: background-color 0.3s;
-    color: #fff;
+    transition: opacity 0.2s ease;
 }
 
 .bl_shopModal_close:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0.7;
 }
 
 /* タブコンテナ（トップページと同じデザイン） */
