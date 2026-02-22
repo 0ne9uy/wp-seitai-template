@@ -122,6 +122,10 @@
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
+
+  /* === Modal === */
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  --modal-z-index: 9999;
 }
 
 /* Tablet (768px以上) */

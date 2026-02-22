@@ -123,22 +123,22 @@
 }
 
 .ly_top .ly_featured {
-  background-color: unset !important;
+  background-color: unset;
   padding-block: var(--space-5xl) 0;
   padding-inline: var(--space-md);
 }
 
 .ly_top .ly_featured .bl_featured_inner .bl_featured_ttl,
 .ly_top .ly_featured .bl_featured_desc {
-  color: var(--color-dark) !important;
+  color: var(--color-dark);
 }
 
 .ly_top .ly_featured .bl_featured_ttl span {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 .ly_top .ly_featured .bl_featured_bgText {
-  color: var(--color-cream) !important;
+  color: var(--color-cream);
 }
 
 /* ボタン */
