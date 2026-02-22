@@ -1,0 +1,166 @@
+/**
+ * File: shop-modal.css
+ * Usage: 店舗一覧モーダルスタイル
+ * Note: タブ・カードのスタイルはshop-card.cssを継承
+ */
+
+/* ========================================
+   モーダルコンテナ
+   ======================================== */
+.bl_shopModal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.bl_shopModal.is_open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bl_shopModal_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bl_shopModal_container {
+    position: relative;
+    z-index: 1;
+    width: 95%;
+    max-height: 90vh;
+    background-color: var(--color-cream);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.bl_shopModal_inner {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+/* ヘッダー */
+.bl_shopModal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.bl_shopModal_ttl {
+    font-size: var(--font-xl);
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.bl_shopModal_close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #fff;
+}
+
+.bl_shopModal_close:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* タブコンテナ（トップページと同じデザイン） */
+.bl_shopModal_tabContainer {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+}
+
+.bl_shopModal_tabContainer .bl_shopList_tabs {
+    flex-shrink: 0;
+    padding: var(--space-sm) var(--space-md) 0;
+    background-color: var(--color-cream);
+}
+
+.bl_shopModal_tabContainer .bl_shopList_panelWrap {
+    flex: 1;
+    overflow-y: auto;
+    margin: 0 var(--space-md) var(--space-md);
+}
+
+/* モーダル用: ボタン群の幅制限を解除 */
+.bl_shopModal .bl_shopCard_btns {
+    max-width: none;
+}
+
+/* 店舗がない場合 */
+.bl_shopModal_body {
+    padding: var(--space-lg);
+    overflow-y: auto;
+    flex: 1;
+}
+
+.bl_shopModal_empty {
+    padding: var(--space-2xl);
+    text-align: center;
+    font-size: var(--font-base);
+    color: var(--color-dark);
+    line-height: 1.8;
+}
+
+/* ----------------------------------------
+   タブレット (768px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 768px) {
+    .bl_shopModal_container {
+        width: 90%;
+    }
+
+    .bl_shopModal_ttl {
+        font-size: var(--font-2xl);
+    }
+
+    .bl_shopModal_close {
+        width: 44px;
+        height: 44px;
+    }
+
+    .bl_shopModal_tabContainer .bl_shopList_tabs {
+        padding: var(--space-md) var(--space-lg) 0;
+    }
+
+    .bl_shopModal_tabContainer .bl_shopList_panelWrap {
+        margin: 0 var(--space-lg) var(--space-lg);
+    }
+}
+
+/* ----------------------------------------
+   PC (1024px以上)
+   ---------------------------------------- */
+@media screen and (min-width: 1024px) {
+    .bl_shopModal_tabContainer .bl_shopList_tabs {
+        padding: var(--space-lg) var(--space-xl) 0;
+    }
+
+    .bl_shopModal_tabContainer .bl_shopList_panelWrap {
+        margin: 0 var(--space-xl) var(--space-xl);
+    }
+}
