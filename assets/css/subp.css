@@ -4,26 +4,358 @@
  * Example: サブページ共通のヘッダーなど
 */
 
-.ly_subp {
-  padding-top: 80px;
-  padding-bottom: 80px;
+/* サブページ共通ヘッダー */
+.ly_subpHeader {
+  background-color: var(--color-cream);
+  padding: var(--section-padding-block) var(--section-padding-inline);
+  position: relative;
+  overflow: visible;
+}
+
+.ly_subpHeader_wave {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 66%;
+  height: 72px;
+  object-fit: contain;
+  object-position: right bottom;
+}
+
+.ly_subpHeader_label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin: 0 0 var(--space-xs);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.ly_subpHeader_labelCircle {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-yellow);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ly_subpHeader_ttl {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.ly_subp {}
+
+.ly_subp__singleShop {
+  background-color: var(--color-white);
 }
 
 .bl_breadcrumb {
-  color: #fff;
+  color: var(--color-white);
   font-size: small;
   padding-top: 20px;
 }
 
+/* ========================================
+   施術の流れ
+   ======================================== */
+.ly_flow {
+  padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-bottom);
+  background-color: var(--color-white);
+}
+
+/*
+ * Note: .ly_flow .bl_sectionTtlWrap のスタイルは base.css に統合済み
+ */
+
+/* 施術ステップコンテナ */
+.bl_flowSteps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+.bl_flowStep {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  overflow: hidden;
+}
+
+/* ステップ番号 */
+.bl_flowStep_number {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+  padding-block: var(--space-xs);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-cream-dark);
+}
+
+.bl_flowStep_label {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.bl_flowStep_num {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ボディ（画像+コンテンツのラッパー） */
+.bl_flowStep_body {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-cream);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding-block: var(--space-xs) 24px;
+  padding-inline: 8px;
+}
+
+/* 画像 */
+.bl_flowStep_img {
+  width: 100%;
+}
+
+.bl_flowStep_img img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* コンテンツ */
+.bl_flowStep_content {
+  margin-top: var(--space-md);
+  padding-inline: var(--space-md);
+}
+
+.bl_flowStep_ttl {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.bl_flowStep_txt {
+  font-size: var(--font-base);
+  color: var(--color-dark);
+}
+
 @media screen and (min-width: 768px) {
-  .ly_subp {
-    padding-top: 80px;
-    padding-bottom: 80px;
+  .ly_subpHeader {
+    padding-block: 56px 72px;
+    padding-inline: 56px;
+  }
+
+  .ly_subpHeader_wave {
+    height: 100%;
+    max-height: 192px;
+  }
+
+  .ly_subpHeader_label {
+    gap: var(--space-2xs);
+    font-size: 1rem;
+  }
+
+  .ly_subpHeader_labelCircle {
+    width: 8px;
+    height: 8px;
+  }
+
+  .ly_subpHeader_ttl {
+    font-size: 1.75rem;
+  }
+
+  .ly_subp {}
+
+  /* 施術の流れ */
+  .ly_flow {
+    padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-bottom);
+  }
+
+  .ly_flow .bl_sectionTtlWrap {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .bl_flowSteps {
+    gap: var(--space-xl);
+  }
+
+  .bl_flowStep {
+    flex-direction: row;
+    position: relative;
+    gap: 0;
+  }
+
+  /* ステップ番号 - 左上にオーバーレイ */
+  .bl_flowStep_number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 80px;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 12px 0 12px 0;
+    z-index: 2;
+  }
+
+  .bl_flowStep_label {
+    font-size: var(--font-xs);
+  }
+
+  .bl_flowStep_num {
+    font-size: 36px;
+  }
+
+  /* ボディ */
+  .bl_flowStep_body {
+    flex: 1;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  /* 画像 */
+  .bl_flowStep_img {
+    width: 45%;
+    flex-shrink: 0;
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+  }
+
+  .bl_flowStep_img img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  /* コンテンツ */
+  .bl_flowStep_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+    padding: var(--space-lg) var(--space-xl);
+    background: var(--color-cream);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .bl_flowStep_ttl {
+    margin-bottom: var(--space-md);
   }
 }
-@media screen and (min-width: 1280px) {
-  .ly_subp {
-    padding-top: 80px;
-    padding-bottom: 80px;
+
+@media screen and (min-width: 1024px) {
+
+  /* 施術の流れ */
+  .ly_flow {
+    padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-bottom);
   }
+
+  .bl_flow_inner {
+    padding-inline: 40px;
+    max-width: var(--max-width-content);
+    margin-inline: auto;
+  }
+
+  .bl_flowSteps {
+    gap: var(--space-2xl);
+  }
+
+  .bl_flowStep {
+    flex-direction: row;
+    align-items: stretch;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+    gap: var(--space-20);
+  }
+
+  /* ステップ番号 - 独立カラム */
+  .bl_flowStep_number {
+    position: static;
+    width: 100%;
+    max-width: 240px;
+    padding-inline: 64px;
+    background: var(--color-cream-dark);
+    border-radius: 40px;
+    flex-shrink: 0;
+  }
+
+  .bl_flowStep_label {
+    font-size: var(--font-2xl);
+  }
+
+  .bl_flowStep_num {
+    font-size: var(--font-9xl);
+  }
+
+  /* ボディ */
+  .bl_flowStep_body {
+    flex: 1;
+    flex-direction: row;
+    border-radius: 40px;
+    overflow: hidden;
+    padding-inline: 12px 48px;
+    padding-block: 12px;
+  }
+
+  /* 画像 */
+  .bl_flowStep_img {
+    width: 280px;
+    flex-shrink: 0;
+    border-radius: 32px;
+    overflow: hidden;
+  }
+
+  .bl_flowStep_img img {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* コンテンツ */
+  .bl_flowStep_content {
+    flex: 1;
+    padding: var(--space-xl) var(--space-2xl);
+    background: var(--color-cream);
+  }
+
+  .bl_flowStep_ttl {
+    font-size: var(--font-3xl);
+  }
+
+  .bl_flowStep_txt {
+    font-size: var(--font-lg);
+  }
+
+  .ly_symptoms.ly_symptoms__single .bl_sectionHeader {
+    padding-inline: 40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .ly_subpHeader {
+    padding-block: 77px 96px;
+    padding-inline: 96px;
+  }
+
+  .ly_subpHeader_ttl {
+    font-size: 2rem;
+  }
+
+  .ly_subp {}
 }

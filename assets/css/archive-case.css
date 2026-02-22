@@ -1,0 +1,243 @@
+/**
+ * archive-case.css
+ * 症例報告一覧ページのスタイル
+ */
+
+/* ===========================================
+   レイアウト
+=========================================== */
+.ly_cont.ly_case {
+  background-color: var(--color-white);
+  padding-inline: 6px;
+  padding-block: 40px 80px;
+}
+
+.bl_caseCont {
+  max-width: var(--max-width-content);
+  margin-inline: auto;
+}
+
+/* ===========================================
+   フィルター
+=========================================== */
+.bl_caseFilter {
+  margin-bottom: 40px;
+}
+
+.bl_caseFilter_select {
+  position: relative;
+  margin-inline: auto;
+  max-width: 880px;
+}
+
+.bl_caseFilter_selectBtn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--color-cream);
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.bl_caseFilter_selectBtn:hover {
+  box-shadow: 0 2px 8px rgba(35, 24, 21, 0.1);
+}
+
+.bl_caseFilter_selectText {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.bl_caseFilter_selectIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.bl_caseFilter_select.is_open .bl_caseFilter_selectIcon {
+  transform: rotate(180deg);
+}
+
+/* ドロップダウンリスト */
+.bl_caseFilter_selectList {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 16px rgba(35, 24, 21, 0.15);
+  z-index: 100;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.bl_caseFilter_select.is_open .bl_caseFilter_selectList {
+  display: block;
+}
+
+.bl_caseFilter_selectList li {
+  margin: 0;
+}
+
+.bl_caseFilter_selectList a {
+  display: block;
+  padding: 12px 20px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.bl_caseFilter_selectList a:hover {
+  background-color: var(--color-cream);
+}
+
+/* 階層表示：親カテゴリー */
+.bl_caseFilter_selectCategory {
+  margin: 0;
+  padding: 0;
+}
+
+.bl_caseFilter_selectCategoryName {
+  display: block;
+  padding: 12px 20px 8px;
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-gold);
+  background-color: var(--color-cream);
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.bl_caseFilter_selectCategory:first-of-type .bl_caseFilter_selectCategoryName {
+  border-top: none;
+}
+
+/* 階層表示：子要素 */
+.bl_caseFilter_selectChildren {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bl_caseFilter_selectChildren li {
+  margin: 0;
+}
+
+.bl_caseFilter_selectChildren a {
+  padding-left: 32px;
+}
+
+/* ===========================================
+   カテゴリータイトル（FAQ風）
+=========================================== */
+.bl_caseGroup_header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: 24px;
+}
+
+.bl_caseGroup_circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.bl_caseGroup_ttl {
+  color: var(--color-gold);
+  font-size: var(--font-lg);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 700;
+}
+
+/* ===========================================
+   カードリスト
+=========================================== */
+.bl_caseList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+.bl_caseList_empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--color-gray);
+}
+
+/* ===========================================
+   カード・スライダー
+   → コンポーネント化: components/case-card.css, components/beer-slider.css
+=========================================== */
+
+/* ===========================================
+   Tablet (768px~)
+=========================================== */
+@media screen and (min-width: 768px) {
+
+  /* レイアウト */
+  .ly_cont.ly_case {
+    padding-block: 70px 120px;
+  }
+
+  .bl_caseCont {
+    padding-inline: 20px;
+  }
+
+  /* フィルター */
+  .bl_caseFilter {
+    margin-bottom: 48px;
+  }
+
+  .bl_caseFilter_selectBtn {
+    padding: 20px 32px 24px 32px;
+  }
+
+  .bl_caseFilter_selectText {
+    font-size: var(--font-lg);
+  }
+
+  /* カテゴリータイトル */
+  .bl_caseGroup_header {
+    gap: var(--space-sm);
+    margin-bottom: 28px;
+  }
+
+  .bl_caseGroup_circle {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bl_caseGroup_ttl {
+    font-size: var(--font-xl);
+  }
+
+  /* リスト */
+  .bl_caseList {
+    gap: 48px 32px;
+  }
+}
+
+/* ===========================================
+   PC (1024px~)
+=========================================== */
+@media screen and (min-width: 1024px) {
+
+  .bl_caseCont {
+    padding-inline: 40px;
+  }
+}

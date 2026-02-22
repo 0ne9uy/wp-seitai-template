@@ -1,50 +1,49 @@
 /**
- * File: archive.css
- * Usage: archive.php（コラム/投稿一覧ページ）のスタイルを定義します。
+ * Archive CSS: お知らせ（レイアウトのみ・モバイルファースト）
  */
 
 /* ベース（SP） */
-.ly_cont.ly_column {
+.ly_cont.ly_info {
   background-color: var(--color-white);
   padding-inline: 6px;
   padding-block: 40px 80px;
 }
 
-.bl_columnCont {
+.bl_infoCont {
   max-width: var(--max-width-content);
   margin-inline: auto;
 }
 
-.bl_columnFilter {
+.bl_infoFilter {
   display: flex;
   flex-direction: column;
 }
 
-.bl_columnFilter_current {
+.bl_infoFilter_current {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
 }
 
-.bl_columnFilter_currentCircle {
+.bl_infoFilter_currentCircle {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: var(--color-gold);
 }
 
-.bl_columnFilter_currentName {
+.bl_infoFilter_currentName {
   color: var(--color-gold);
   font-size: var(--font-lg);
   font-family: 'Zen Maru Gothic', sans-serif;
   font-weight: 700;
 }
 
-.bl_columnFilter_select {
+.bl_infoFilter_select {
   position: relative;
 }
 
-.bl_columnFilter_selectBtn {
+.bl_infoFilter_selectBtn {
   appearance: none;
   -webkit-appearance: none;
   background-color: var(--color-cream);
@@ -61,7 +60,7 @@
   gap: var(--space-sm);
 }
 
-.bl_columnFilter_selectIcon {
+.bl_infoFilter_selectIcon {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -72,7 +71,7 @@
   justify-content: center;
 }
 
-.bl_columnFilter_selectList {
+.bl_infoFilter_selectList {
   display: none;
   position: absolute;
   top: 100%;
@@ -87,11 +86,11 @@
   z-index: 100;
 }
 
-.bl_columnFilter_select.is_open .bl_columnFilter_selectList {
+.bl_infoFilter_select.is_open .bl_infoFilter_selectList {
   display: block;
 }
 
-.bl_columnFilter_selectList li a {
+.bl_infoFilter_selectList li a {
   display: block;
   padding: 12px 24px;
   color: var(--color-dark);
@@ -99,69 +98,39 @@
   transition: background-color var(--transition-fast);
 }
 
-.bl_columnFilter_selectList li a:hover {
+.bl_infoFilter_selectList li a:hover {
   background-color: var(--color-cream);
 }
 
-.bl_columnFilter_selectList li:first-child a {
+.bl_infoFilter_selectList li:first-child a {
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
-.bl_columnFilter_selectList li:last-child a {
+.bl_infoFilter_selectList li:last-child a {
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
-.bl_columnList {
-  display: grid;
-  grid-template-columns: 1fr;
+.bl_infoList {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-md);
   margin-top: 32px;
 }
 
-.bl_columnItem {
+.bl_infoItem {
   border-radius: var(--radius-lg);
   background: var(--color-cream);
   box-shadow: var(--shadow-card);
-  padding: 8px 8px 52px 8px;
+  padding-inline: 16px;
+  padding-block: 16px;
 }
 
-.bl_columnItem_link {
-  display: flex;
-  flex-direction: column;
+.bl_infoItem_date {
+  font-size: var(--font-base);
 }
 
-.bl_columnItem_thumb {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-
-.bl_columnItem_thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.bl_columnItem_content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  padding: 16px 16px 0 16px;
-}
-
-.bl_columnItem_meta {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.bl_columnItem_date {
-  font-size: var(--font-sm);
-  color: var(--color-gray);
-}
-
-.bl_columnItem_cat {
+/* タグスタイル（bl_columnItem_catと同じ） */
+.bl_infoItem_cat {
   font-size: var(--font-xs);
   color: var(--color-white);
   padding-inline: 8px;
@@ -169,94 +138,95 @@
   border-radius: var(--radius-xs);
 }
 
-.bl_columnItem_body {
+.bl_infoItem_ttl {
+  font-size: var(--font-lg);
+  font-weight: 500;
+
+}
+
+.bl_infoItem_link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.bl_infoItem_meta {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.bl_columnItem_ttl {
-  font-size: var(--font-base);
-  font-weight: 500;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-}
-
-.bl_columnList_empty {
-  text-align: center;
-  padding: 40px 20px;
-  color: var(--color-gray);
-}
-
-/* Tablet (600px〜) */
-@media screen and (min-width: 600px) {
-  .bl_columnList {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-  }
+.bl_infoItem_body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
 
 /* PC (768px〜) */
 @media screen and (min-width: 768px) {
-  .bl_columnCont {
+  .bl_infoCont {
     padding-inline: 20px;
   }
 
-  .ly_cont.ly_column {
+  .ly_cont.ly_info {
     padding-block: 70px 120px;
     padding-inline: 40px;
   }
 
-  .bl_columnFilter {
+  .bl_infoFilter {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 
-  .bl_columnFilter_currentName {
+  .bl_infoFilter_currentName {
     font-size: var(--font-xl);
   }
 
-  .bl_columnFilter_selectBtn {
+  .bl_infoFilter_selectBtn {
     padding: 16px 64px 16px 32px;
     font-size: var(--font-lg);
     min-width: 240px;
   }
 
-  .bl_columnFilter_selectIcon {
+  .bl_infoFilter_selectIcon {
     right: 20px;
   }
 
-  .bl_columnFilter_selectList {
+  .bl_infoFilter_selectList {
     min-width: 240px;
   }
 
-  .bl_columnFilter_selectList li a {
+  .bl_infoFilter_selectList li a {
     padding: 14px 32px;
   }
 
-  .bl_columnItem_date {
-    font-size: var(--font-base);
+  .bl_infoItem {
+    padding-inline: var(--space-2xl);
   }
 
-  .bl_columnItem_cat {
+  .bl_infoItem_link {
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+
+  .bl_infoItem_date {
+    font-size: var(--font-xl);
+  }
+
+  .bl_infoItem_cat {
     font-size: var(--font-sm);
   }
 
-  .bl_columnItem_ttl {
-    font-size: var(--font-lg);
+  .bl_infoItem_meta {
+    max-width: 180px;
   }
 }
 
-/* Large PC (1024px〜) */
 @media screen and (min-width: 1024px) {
-  .bl_columnCont {
+  .bl_infoCont {
     padding-inline: 40px;
-  }
-
-  .bl_columnList {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
   }
 }

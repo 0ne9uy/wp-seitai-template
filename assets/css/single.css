@@ -19,7 +19,7 @@
 
 .un_column .ly_normalSec {
     border-radius: 12px;
-    background-color: #fff9ef;
+    background-color: var(--color-cream);
     padding-inline: 16px;
     padding-block: 40px;
 }
@@ -46,12 +46,12 @@
 .un_column .bl_postHeader {
     margin-bottom: 24px;
     padding-bottom: 16px;
-    border-bottom: 2px solid #FEEFD0;
+    border-bottom: 2px solid var(--color-cream-dark);
 }
 
 /* 目次 */
 .un_column .bl_toc {
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: 12px;
     padding: 20px 16px;
     margin-bottom: 24px;
@@ -133,7 +133,7 @@
     align-items: center;
     gap: 8px;
     font-size: 20px;
-    color: #F39800;
+    color: var(--color-primary);
     margin-bottom: 16px;
 }
 
@@ -141,13 +141,13 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #F39800;
+    background-color: var(--color-primary);
     border-radius: 50%;
     flex-shrink: 0;
 }
 
 .un_column .bl_supervisor_card {
-    background-color: #FEEFD0;
+    background-color: var(--color-cream-dark);
     border-radius: 16px;
     padding: 20px;
     display: flex;
@@ -178,8 +178,8 @@
 .un_column .bl_supervisor_role {
     display: inline-block;
     font-size: var(--font-sm);
-    color: #fff;
-    background-color: #F39800;
+    color: var(--color-white);
+    background-color: var(--color-primary);
     padding: 4px 12px;
     border-radius: 4px;
     margin-bottom: 12px;
@@ -252,7 +252,7 @@
     align-items: center;
     gap: 8px;
     font-size: 20px;
-    color: #F39800;
+    color: var(--color-primary);
     margin-bottom: 20px;
 }
 
@@ -260,7 +260,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #F39800;
+    background-color: var(--color-primary);
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -273,7 +273,7 @@
 
 .bl_relatedPosts_item {
     display: block;
-    background-color: #FEEFD0;
+    background-color: var(--color-cream-dark);
     border-radius: 16px;
     padding: 16px;
     text-decoration: none;
@@ -314,8 +314,8 @@
     font-size: var(--font-xs);
     padding: 4px 10px;
     border-radius: 4px;
-    background-color: #F39800;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .bl_relatedPosts_ttlItem {
