@@ -1047,43 +1047,7 @@ html::-webkit-scrollbar {
   opacity: 0.8;
 }
 
-/* ページネーション（共通） */
-.bl_pager {
-  margin-top: 32px;
-}
-
-.bl_pager_list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-}
-
-.bl_pager_item a,
-.bl_pager_item span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-xl);
-  color: #999;
-  font-family: 'Lato', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.bl_pager_item a:hover {
-  color: #333;
-}
-
-/* 現在のページ */
-.bl_pager_item .current {
-  color: #333;
-  font-weight: 700;
-}
-
-/* 省略記号 */
-.bl_pager_item .dots {
-  color: #999;
-}
+/* ページネーション → 分割済み: assets/css/components/pagination.css */
 
 /* ハンバーガーメニュー */
 .el_humb {
@@ -1507,19 +1471,7 @@ body.is_menuOpen {
     display: block;
   }
 
-  /* ページネーション（PC） */
-  .bl_pager {
-    margin-top: 48px;
-  }
-
-  .bl_pager_list {
-    gap: var(--space-lg);
-  }
-
-  .bl_pager_item a,
-  .bl_pager_item span {
-    font-size: var(--font-2xl);
-  }
+  /* ページネーション → 分割済み: assets/css/components/pagination.css */
 
   /* ヘッダー */
   .ly_header {
