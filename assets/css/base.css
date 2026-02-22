@@ -934,42 +934,7 @@ html::-webkit-scrollbar {
 
 /* ページネーション → 分割済み: assets/css/components/pagination.css */
 
-/* ハンバーガーメニュー */
-.el_humb {
-  position: absolute;
-  padding-top: 2px;
-  top: 50%;
-  right: 12px;
-  width: 48px;
-  height: 48px;
-  transform: translateY(-50%);
-  border-radius: 99px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1001;
-  color: var(--color-white);
-  background: linear-gradient(179.94deg, #86bf00 0.06%, #20ae4f 99.94%);
-}
-
-.el_humb small {
-  font-size: 10px;
-  line-height: 1;
-}
-
-.el_humb .close {
-  display: none;
-}
-
-.el_humb.is_active .open {
-  display: none;
-}
-
-.el_humb.is_active .close {
-  display: block;
-}
+/* ハンバーガーメニュー → 分割済み: assets/css/components/hamburger.css */
 
 /* モバイルナビゲーション */
 .bl_sidebar_nav {
@@ -1388,14 +1353,7 @@ body.is_menuOpen {
     transform: none;
   }
 
-  .el_humb {
-    width: 60px;
-    height: 60px;
-  }
-
-  .el_humb small {
-    font-size: 16px;
-  }
+  /* ハンバーガー → 分割済み: assets/css/components/hamburger.css */
 
   /* 768-1100: ナビリンク非表示、ハンバーガー表示 */
   .bl_header_nav_ul {
