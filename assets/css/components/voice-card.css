@@ -1,0 +1,192 @@
+/**
+ * File: voice-card.css
+ * Usage: お客様の声カード - 共通スタイル
+ * Used in: voice-list.php, archive-voice.php
+ * Note: モディファイア（--slider, --list）で表示差分を管理
+ */
+
+/* ========================================
+   カード基本構造
+   ======================================== */
+.bl_voiceCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  background: var(--color-cream);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+/* スライダー版 */
+.bl_voiceCard--slider {
+  height: 100%;
+  padding: 8px 8px var(--space-xl) 8px;
+}
+
+/* 一覧ページ版 */
+.bl_voiceCard--list {
+  gap: var(--space-md);
+  padding: var(--space-md);
+}
+
+/* ========================================
+   サムネイル
+   ======================================== */
+.bl_voiceCard_thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+/* スライダー版 */
+.bl_voiceCard--slider .bl_voiceCard_thumb {
+  aspect-ratio: 352 / 216;
+}
+
+/* 一覧ページ版 */
+.bl_voiceCard--list .bl_voiceCard_thumb {
+  aspect-ratio: 16 / 9;
+}
+
+.bl_voiceCard_thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bl_voiceCard_thumbNoImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  color: var(--color-gray);
+  font-size: var(--font-sm);
+}
+
+/* ========================================
+   情報セクション
+   ======================================== */
+.bl_voiceCard_info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-md) var(--space-sm);
+}
+
+.bl_voiceCard--list .bl_voiceCard_info {
+  padding: 0;
+}
+
+/* ========================================
+   タイトル
+   ======================================== */
+.bl_voiceCard_ttl {
+  font-size: var(--font-base);
+  font-weight: 700;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* スライダー版: 緑色 */
+.bl_voiceCard--slider .bl_voiceCard_ttl {
+  color: var(--color-primary);
+}
+
+/* 一覧ページ版: 金色 */
+.bl_voiceCard--list .bl_voiceCard_ttl {
+  color: var(--color-gold);
+}
+
+/* ========================================
+   メタ情報
+   ======================================== */
+.bl_voiceCard_meta {
+  margin-top: auto;
+  padding-top: var(--space-sm);
+}
+
+.bl_voiceCard_metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-xs);
+  color: var(--color-gray);
+}
+
+.bl_voiceCard_metaRow + .bl_voiceCard_metaRow {
+  margin-top: 4px;
+}
+
+.bl_voiceCard_name {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+/* ========================================
+   ボタン
+   ======================================== */
+.bl_voiceCard_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--gradient-green);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity var(--transition-base);
+}
+
+.bl_voiceCard_btn:hover {
+  opacity: 0.8;
+}
+
+.bl_voiceCard_btn_arrow {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+   Tablet (768px〜)
+   ======================================== */
+@media screen and (min-width: 768px) {
+  .bl_voiceCard_ttl {
+    font-size: var(--font-lg);
+  }
+
+  .bl_voiceCard_name {
+    font-size: var(--font-base);
+  }
+
+  .bl_voiceCard_btn {
+    padding: var(--space-sm) var(--space-lg);
+  }
+}
+
+/* ========================================
+   PC (1024px〜)
+   ======================================== */
+@media screen and (min-width: 1024px) {
+  .bl_voiceCard--slider {
+    padding: 12px 12px var(--space-xl) 12px;
+  }
+
+  .bl_voiceCard_info {
+    padding: var(--space-md);
+  }
+
+  .bl_voiceCard--list .bl_voiceCard_info {
+    padding: 0;
+  }
+}

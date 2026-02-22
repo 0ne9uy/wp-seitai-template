@@ -84,6 +84,16 @@ function enqueue_my_styles()
         wp_enqueue_style('case-slider-css', $uri . '/assets/css/case-slider.css');
     }
 
+    // お客様の声カード共通コンポーネント
+    $needs_voice_card = is_front_page()
+        || is_singular('shop')
+        || is_singular('symptoms')
+        || is_post_type_archive('voice');
+
+    if ($needs_voice_card) {
+        wp_enqueue_style('voice-card-css', $uri . '/assets/css/components/voice-card.css');
+    }
+
     // お客様の声スライダーCSS（front-page, single-shop, single-symptoms）
     if (is_front_page() || is_singular('shop') || is_singular('symptoms')) {
         wp_enqueue_style('voice-list-css', $uri . '/assets/css/voice-list.css');
